@@ -137,7 +137,7 @@ document.getElementById("processBtn").onclick = async () => {
   if (formatSel.value === "image") {
     downloadBtn.onclick = null;
     downloadBtn.href = url;
-    downloadBtn.download = "image.jpg";
+    downloadBtn.download = "(imagetoolify.in).jpg";
   } else {
     downloadBtn.onclick = null;
     downloadBtn.onclick = () => {
@@ -148,7 +148,7 @@ document.getElementById("processBtn").onclick = async () => {
         format: [bw, bh]
       });
       pdf.addImage(url, "JPEG", 0, 0, bw, bh);
-      pdf.save("image.pdf");
+      pdf.save("(imagetoolify.in).pdf");
     };
     downloadBtn.removeAttribute("download");
     downloadBtn.href = "javascript:void(0)";
