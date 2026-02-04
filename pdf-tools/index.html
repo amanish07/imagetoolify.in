@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title>Image to PDF & PDF to Image Converter – imagetoolify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/ImageToolifyLogo.png">
+  <link rel="shortcut icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+
+  <!-- BASIC SEO -->
+  <meta name="description" content="Free online Image to PDF and PDF to Image converter. Convert multiple images to PDF or extract images from PDF easily using imagetoolify.">
+  <meta name="keywords" content="image to pdf, pdf to image, jpg to pdf, pdf tools online">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Image to PDF & PDF to Image – imagetoolify">
+  <meta property="og:description" content="Convert images to PDF and PDF to images online. Fast, free and secure imagetoolify PDF tools.">
+  <meta property="og:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imagetoolify.in/pdf-tools.html">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image to PDF & PDF to Image – imagetoolify">
+  <meta name="twitter:description" content="Free online Image to PDF and PDF to Image converter tool.">
+  <meta name="twitter:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
+
+  <!-- LIBRARIES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/styles/PDF-tools.css">
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">imagetoolify</a>
+
+    <div class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <nav class="nav-menu" id="navMenu">
+    <a href="/">Home</a>
+    <a href="/image-resizer">Image Resizer</a>
+    <a href="/image-converter">Image Converter</a>
+    <a href="/pdf-tools">PDF Tools</a>
+    <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Image ⇄ PDF Tools</h1>
+  <p class="sub">Image to PDF & PDF to Image Converter</p>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="imgpdf">Image → PDF</button>
+    <button class="tab" data-tab="pdfimg">PDF → Image</button>
+  </div>
+
+  <!-- IMAGE TO PDF -->
+  <div class="panel active" id="imgpdf">
+    <div class="upload-box">
+      <label class="btn">
+        Upload Images
+        <input type="file" id="imgInput" accept="image/*" multiple>
+      </label>
+      <p id="imgInfo"></p>
+    </div>
+    <button class="btn" id="makePdf">Convert to PDF</button>
+  </div>
+
+  <!-- PDF TO IMAGE -->
+  <div class="panel" id="pdfimg">
+    <div class="upload-box">
+      <label class="btn">
+        Upload PDF
+        <input type="file" id="pdfInput" accept="application/pdf">
+      </label>
+      <p id="pdfInfo"></p>
+    </div>
+    <button class="btn" id="makeImages">Convert to Images</button>
+  </div>
+
+  <div id="processing">⏳ Processing… please wait</div>
+  <div id="preview"></div>
+
+
+
+
+  <!-- SEO TEXT -->
+  <div class="seo-text" style="margin-top:30px">
+    <p>
+      <strong>imagetoolify PDF Tools</strong> allow you to convert images into PDF files
+      and extract images from PDF documents online. This free tool works directly in
+      your browser and does not upload files to any server.
+    </p>
+    <ul>
+      <li>Convert multiple images into one PDF file.</li>
+      <li>Extract images from PDF documents easily.</li>
+      <li>Fast and secure browser-based processing.</li>
+      <li>No signup or software installation required.</li>
+    </ul>
+  </div>
+
+  <!-- HOW TO USE -->
+  <div class="section" style="margin-top:30px">
+    <h2>How to Use PDF Tools</h2>
+
+    <p>
+      imagetoolify PDF Tools help you convert images to PDF and PDF to images in a few
+      simple steps. Follow the instructions below based on your requirement.
+    </p>
+
+    <ol style="padding-left:20px; line-height:1.8">
+      <li>Select the required option: <strong>Image → PDF</strong> or <strong>PDF → Image</strong>.</li>
+      <li>For Image to PDF, upload one or multiple images from your device.</li>
+      <li>Click on the <strong>Convert to PDF</strong> button to generate a single PDF file.</li>
+      <li>For PDF to Image, upload your PDF file using the upload button.</li>
+      <li>Click on <strong>Convert to Images</strong> to extract images from each PDF page.</li>
+      <li>Preview the output and download the PDF or images as needed.</li>
+    </ol>
+
+    <p>
+      All conversions happen locally in your browser, ensuring complete privacy and
+      security of your files.
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="/about">About Us</a> |
+    <a href="/faq">FAQ</a> |
+    <a href="/privacy-policy">Privacy Policy</a> |
+    <a href="/terms">Terms</a> |
+    <a href="/contact">Contact</a>
+  </div>
+  <div class="footer-text">
+    © 2026 imagetoolify.in — All Rights Reserved.
+  </div>
+</footer>
+
+<script src="/assets/scripts/PDF-tools.js"></script>
+</body>
+</html>
