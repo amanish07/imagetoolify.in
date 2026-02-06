@@ -3,7 +3,7 @@ const navMenu = document.getElementById("navMenu");
 
 menuBtn.onclick = () => {
   menuBtn.classList.toggle("active");
-  navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
+  navMenu.classList.toggle("open");
 };
 
 const form = document.getElementById("contactForm");
