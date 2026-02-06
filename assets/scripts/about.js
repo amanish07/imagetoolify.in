@@ -3,5 +3,18 @@ const navMenu = document.getElementById("navMenu");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
-  navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
+
+  if (navMenu.style.display === "flex") {
+    navMenu.style.display = "none";
+  } else {
+    navMenu.style.display = "flex";
+  }
+});
+
+/* OPTIONAL: click outside to close (safe) */
+document.addEventListener("click", (e) => {
+  if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+    menuBtn.classList.remove("active");
+    navMenu.style.display = "none";
+  }
 });
