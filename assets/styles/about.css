@@ -21,9 +21,9 @@
 
 *{
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
   margin:0;
   padding:0;
+  font-family:Arial, sans-serif;
 }
 
 body{
@@ -32,10 +32,16 @@ body{
   min-height:100vh;
   display:flex;
   flex-direction:column;
+  padding-top:70px; /* 🔥 NAVBAR SPACE */
 }
 
 /* ===== NAVBAR ===== */
 .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
   background:rgba(0,0,0,0.25);
   backdrop-filter:blur(8px);
 }
@@ -51,11 +57,12 @@ body{
 
 .logo{
   color:#fff;
-  font-weight:bold;
   font-size:18px;
+  font-weight:bold;
   text-decoration:none;
 }
 
+/* ===== HAMBURGER ===== */
 .menu-btn{
   width:28px;
   height:22px;
@@ -65,8 +72,8 @@ body{
 
 .menu-btn span{
   position:absolute;
-  height:3px;
   width:100%;
+  height:3px;
   background:#fff;
   transition:.3s;
 }
@@ -79,16 +86,23 @@ body{
   transform:rotate(45deg);
   top:9px;
 }
-.menu-btn.active span:nth-child(2){opacity:0}
+.menu-btn.active span:nth-child(2){
+  opacity:0;
+}
 .menu-btn.active span:nth-child(3){
   transform:rotate(-45deg);
   top:9px;
 }
 
+/* ===== NAV MENU ===== */
 nav{
   display:none;
   flex-direction:column;
-  background:rgba(0,0,0,0.9);
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.95);
 }
 
 nav a{
@@ -102,15 +116,19 @@ nav a:hover{
   background:rgba(255,255,255,0.1);
 }
 
+/* ===== DESKTOP ===== */
 @media(min-width:768px){
   .menu-btn{display:none}
+
   nav{
     display:flex !important;
+    position:static;
     flex-direction:row;
-    background:none;
     justify-content:center;
+    background:none;
     padding-bottom:10px;
   }
+
   nav a{
     border:none;
     padding:0 14px;
@@ -153,4 +171,6 @@ footer a{
   margin:0 6px;
 }
 
-footer a:hover{text-decoration:underline}
+footer a:hover{
+  text-decoration:underline;
+}
