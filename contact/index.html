@@ -6,16 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Contact imagetoolify for support, feedback or queries related to image and PDF tools.">
+
+  <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
   <link rel="canonical" href="https://imagetoolify.in/contact/">
+
+  <link rel="stylesheet" href="/assets/styles/contact.css">
 </head>
 
 <body>
 
-<header>
-  <a href="/">imagetoolify</a>
-  <button id="menuBtn">☰</button>
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">imagetoolify</a>
+    <div class="menu-btn" id="menuBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 
-  <nav id="navMenu" style="display:none;">
+  <nav class="nav-menu" id="navMenu">
     <a href="/">Home</a>
     <a href="/image-resizer">Image Resizer</a>
     <a href="/image-converter">Image Converter</a>
@@ -26,30 +35,37 @@
   </nav>
 </header>
 
-<hr>
+<div class="page">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="sub">Get in touch with imagetoolify</p>
 
-<h1>Contact Us</h1>
-<p>Get in touch with imagetoolify</p>
+    <!-- ✅ WORKING FORM -->
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
 
-<form id="contactForm">
-  <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <!-- honeypot -->
+      <input type="text" name="_gotcha" style="display:none">
 
-  <input type="email" name="email" placeholder="Your Email" required><br><br>
-
-  <textarea name="message" placeholder="Your Message" required></textarea><br><br>
-
-  <!-- honeypot (spam protection) -->
-  <input type="text" name="_gotcha" style="display:none">
-
-  <button type="submit">Send Message</button>
-</form>
-
-<p id="formStatus"></p>
-
-<hr>
+      <button type="submit">Send Message</button>
+      <p id="formStatus" class="note"></p>
+    </form>
+  </div>
+</div>
 
 <footer>
-  © 2026 imagetoolify.in — All Rights Reserved.
+  <div class="footer-links">
+    <a href="/about">About Us</a> |
+    <a href="/faq">FAQ</a> |
+    <a href="/privacy-policy">Privacy Policy</a> |
+    <a href="/terms">Terms</a> |
+    <a href="/contact">Contact</a>
+  </div>
+  <div class="footer-text">
+    © 2026 imagetoolify.in — All Rights Reserved.
+  </div>
 </footer>
 
 <script src="/assets/scripts/contact.js"></script>
