@@ -11,7 +11,9 @@ const status = document.getElementById("formStatus");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   status.textContent = "Sending message...";
+  status.style.color = "";
 
   const data = new FormData(form);
 
@@ -19,20 +21,30 @@ form.addEventListener("submit", async (e) => {
     const res = await fetch("https://formspree.io/f/mqedkzoe", {
       method: "POST",
       body: data,
-      headers: { "Accept": "application/json" }
+      headers: {
+        "Accept": "application/json"
+      }
     });
+
+    const result = await res.json(); // 🔴 THIS WAS MISSING
 
     if (res.ok) {
       form.reset();
       status.textContent = "Thank you for contacting us. We will reply you soon.";
+      status.style.color = "green";
 
       setTimeout(() => {
         status.textContent = "";
-      }, 10000);
+      }, 5000);
+
     } else {
-      status.textContent = "Something went wrong. Please try again.";
+      // 🔥 REAL ERROR MESSAGE FROM FORMSPREE
+      status.textContent = result.error || "Submission failed. Please check form fields.";
+      status.style.color = "red";
     }
-  } catch {
-    status.textContent = "Network error. Please try later.";
+
+  } catch (error) {
+    status.textContent = "Network error. Please try again later.";
+    status.style.color = "red";
   }
 });
