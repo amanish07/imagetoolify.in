@@ -23,187 +23,148 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
 }
 
 body{
+  background:var(--bg);
+  color:var(--text);
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  background:var(--bg);
-  color:var(--text);
 }
 
-/* ================= NAVBAR ================= */
-.navbar{
+/* ===== HEADER ===== */
+header{
   position:sticky;
   top:0;
   z-index:1000;
   background:rgba(0,0,0,0.25);
   backdrop-filter:blur(8px);
-}
-
-.nav-container{
-  max-width:1100px;
-  margin:auto;
   padding:14px 18px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
-.logo{
+header a{
   color:#fff;
-  font-size:18px;
   font-weight:bold;
   text-decoration:none;
+  font-size:18px;
 }
 
-.menu-btn{
-  width:28px;
-  height:22px;
-  position:relative;
+#menuBtn{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:22px;
   cursor:pointer;
 }
 
-.menu-btn span{
+/* ===== NAV MENU ===== */
+#navMenu{
   position:absolute;
-  height:3px;
+  top:60px;
+  left:0;
   width:100%;
-  background:#fff;
-  transition:.3s;
-}
-
-.menu-btn span:nth-child(1){top:0}
-.menu-btn span:nth-child(2){top:9px}
-.menu-btn span:nth-child(3){top:18px}
-
-.menu-btn.active span:nth-child(1){
-  transform:rotate(45deg);
-  top:9px;
-}
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
-.menu-btn.active span:nth-child(3){
-  transform:rotate(-45deg);
-  top:9px;
-}
-
-/* ===== NAV MENU (CHANGE START) ===== */
-.nav-menu{
-  max-height:0;                 /* ✅ CHANGE: display:none removed */
-  overflow:hidden;              /* ✅ CHANGE */
-  display:flex;
+  background:rgba(0,0,0,0.95);
+  display:none;
   flex-direction:column;
-  background:rgba(0,0,0,0.9);
-  transition:max-height .35s ease; /* ✅ CHANGE: smooth animation */
 }
 
-/* ✅ CHANGE: open state for animation */
-.nav-menu.open{
-  max-height:400px;
-}
-
-.nav-menu a{
-  color:#fff;
+#navMenu a{
   padding:14px 20px;
+  color:#fff;
   text-decoration:none;
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.nav-menu a:hover{
+#navMenu a:hover{
   background:rgba(255,255,255,0.1);
 }
 
-/* ===== DESKTOP FIX ===== */
+/* DESKTOP */
 @media(min-width:768px){
-  .menu-btn{display:none}
-
-  .nav-menu{
-    max-height:none;          /* ✅ CHANGE */
+  #menuBtn{display:none}
+  #navMenu{
+    position:static;
+    display:flex !important;
     flex-direction:row;
-    justify-content:center;
     background:none;
+    width:auto;
   }
-
-  .nav-menu a{
+  #navMenu a{
     border:none;
     padding:0 14px;
   }
 }
 
-/* ================= PAGE ================= */
-.page{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+/* ===== PAGE ===== */
+h1{
+  text-align:center;
+  margin:30px 0 8px;
 }
 
-.container{
-  max-width:650px;
-  width:100%;
+p{
+  text-align:center;
+  margin-bottom:20px;
+  opacity:.85;
+}
+
+form{
+  max-width:600px;
+  margin:0 auto 40px;
   background:var(--card);
   padding:26px;
   border-radius:14px;
 }
 
-h1{
-  text-align:center;
-  margin-bottom:8px;
-}
-
-.sub{
-  text-align:center;
-  font-size:14px;
-  opacity:.8;
-  margin-bottom:22px;
-}
-
 input,textarea{
   width:100%;
-  padding:10px;
+  padding:12px;
   border-radius:6px;
   border:1px solid var(--border);
-  margin-bottom:14px;
   background:transparent;
   color:var(--text);
+  margin-bottom:14px;
+  font-size:14px;
 }
 
 textarea{
   min-height:120px;
+  resize:vertical;
 }
 
-button{
+button[type="submit"]{
   width:100%;
   background:var(--accent);
   color:#fff;
   border:none;
   padding:12px;
   border-radius:8px;
+  font-size:15px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.note{
-  text-align:center;
-  font-size:14px;
-  margin-top:12px;
+button[type="submit"]:hover{
+  opacity:.9;
 }
 
-/* ================= FOOTER ================= */
+/* STATUS MESSAGE */
+#formStatus{
+  text-align:center;
+  margin-top:14px;
+  font-size:14px;
+}
+
+/* ===== FOOTER ===== */
 footer{
+  margin-top:auto;
   background:var(--footer-bg);
   color:var(--footer-text);
   text-align:center;
   padding:16px 10px;
   font-size:14px;
-}
-
-footer a{
-  color:var(--footer-text);
-  text-decoration:none;
-  margin:0 6px;
 }
