@@ -23,6 +23,11 @@
   </url>
 
   <url>
+    <loc>https://imagetoolify.in/blog</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://imagetoolify.in/about</loc>
     <priority>0.6</priority>
   </url>
