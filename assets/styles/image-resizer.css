@@ -295,3 +295,15 @@ footer a:hover {
     padding: 16px;
   }
 }
+
+
+.custom-text-link {
+  text-decoration: none;      /* underline hata diya */
+  color: #0000EE;             /* required color */
+  font-size: 18px;            /* text thoda bada */
+  font-weight: 600;           /* thoda bold */
+}
+
+.custom-text-link:hover {
+  text-decoration: underline; /* hover par optional */
+}
