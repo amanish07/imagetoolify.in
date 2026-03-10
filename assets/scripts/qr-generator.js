@@ -1,4 +1,6 @@
-/* INPUT ELEMENTS */
+/* ===============================
+GET ELEMENTS
+=============================== */
 
 const input = document.getElementById("qrInput");
 const qrBox = document.getElementById("qrcode");
@@ -7,21 +9,25 @@ const downloadBtn = document.getElementById("download");
 const logoUpload = document.getElementById("logoUpload");
 
 let logoData = null;
-let finalBlob = null;
+let finalImage = null;
 
 
-/* AUTO GENERATE */
+/* ===============================
+AUTO GENERATE WHILE TYPING
+=============================== */
 
 input.addEventListener("input", generateQR);
 
 
-/* LOGO UPLOAD */
+/* ===============================
+LOGO UPLOAD
+=============================== */
 
-logoUpload.onchange = () => {
+logoUpload.addEventListener("change", function(){
 
-const file = logoUpload.files[0];
+const file = this.files[0];
 
-if (!file) return;
+if(!file) return;
 
 const reader = new FileReader();
 
@@ -35,78 +41,83 @@ generateQR();
 
 reader.readAsDataURL(file);
 
-};
+});
 
 
 
-/* GENERATE QR */
+/* ===============================
+GENERATE QR
+=============================== */
 
 function generateQR(){
 
 if(!input.value){
 
-qrBox.innerHTML="";
-preview.style.display="none";
-
+qrBox.innerHTML = "";
+preview.style.display = "none";
 return;
 
 }
 
-qrBox.innerHTML="";
+qrBox.innerHTML = "";
 
+
+/* CREATE QR */
 
 new QRCode(qrBox,{
-text:input.value,
-width:250,
-height:250
+text: input.value,
+width: 250,
+height: 250
 });
 
 
-preview.style.display="block";
+preview.style.display = "block";
 
 
-setTimeout(()=>{
+setTimeout(function(){
 
 let qrImg = qrBox.querySelector("img");
 
+/* if library creates canvas */
+
 if(!qrImg){
 
-const canvasTemp = qrBox.querySelector("canvas");
+const tempCanvas = qrBox.querySelector("canvas");
 
 qrImg = new Image();
-qrImg.src = canvasTemp.toDataURL();
+qrImg.src = tempCanvas.toDataURL();
 
 }
 
 
-const img = new Image();
+const baseImage = new Image();
 
-img.src = qrImg.src;
+baseImage.src = qrImg.src;
 
 
-img.onload = function(){
+baseImage.onload = function(){
 
 const padding = 18;
 
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = img.width + padding*2;
-canvas.height = img.height + padding*2;
+canvas.width = baseImage.width + padding*2;
+canvas.height = baseImage.height + padding*2;
 
 
-/* white background */
+/* WHITE BACKGROUND */
 
-ctx.fillStyle="#ffffff";
+ctx.fillStyle = "#ffffff";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
-/* draw qr */
+/* DRAW QR */
 
-ctx.drawImage(img,padding,padding);
+ctx.drawImage(baseImage,padding,padding);
 
 
-/* add logo if exists */
+/* ADD LOGO */
 
 if(logoData){
 
@@ -116,7 +127,7 @@ logo.src = logoData;
 
 logo.onload = function(){
 
-const size = img.width/4;
+const size = baseImage.width/4;
 
 ctx.drawImage(
 logo,
@@ -126,16 +137,15 @@ size,
 size
 );
 
-finish(canvas);
+finishImage(canvas);
 
 };
 
 }else{
 
-finish(canvas);
+finishImage(canvas);
 
 }
-
 
 };
 
@@ -145,60 +155,74 @@ finish(canvas);
 
 
 
-/* FINAL IMAGE */
+/* ===============================
+FINAL IMAGE PROCESS
+=============================== */
 
-function finish(canvas){
+function finishImage(canvas){
 
-canvas.toBlob(function(blob){
+finalImage = canvas.toDataURL("image/png");
 
-finalBlob = blob;
+/* show preview */
 
-const url = URL.createObjectURL(blob);
+const previewImg = qrBox.querySelector("img");
 
-document.querySelector("#qrcode img").src = url;
+if(previewImg){
 
-});
+previewImg.src = finalImage;
+
+}else{
+
+qrBox.innerHTML = `<img src="${finalImage}" alt="QR Code">`;
+
+}
 
 }
 
 
 
-/* DOWNLOAD */
+/* ===============================
+DOWNLOAD BUTTON
+=============================== */
 
 downloadBtn.addEventListener("click",function(e){
 
 e.preventDefault();
 
-if(!finalBlob) return;
+if(!finalImage) return;
 
 const link = document.createElement("a");
 
-link.href = URL.createObjectURL(finalBlob);
-link.download = "qr-code (imagetoolify.in).png";
+link.href = finalImage;
+link.download = "qr-code-imagetoolify.png";
 
 document.body.appendChild(link);
-
 link.click();
-
 document.body.removeChild(link);
 
 });
 
 
 
-/* HAMBURGER MENU */
+/* ===============================
+HAMBURGER MENU
+=============================== */
 
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
-menuBtn.addEventListener("click",()=>{
+menuBtn.addEventListener("click",function(){
 
 menuBtn.classList.toggle("active");
 
-if(navMenu.style.display==="flex"){
-navMenu.style.display="none";
+if(navMenu.style.display === "flex"){
+
+navMenu.style.display = "none";
+
 }else{
-navMenu.style.display="flex";
+
+navMenu.style.display = "flex";
+
 }
 
 });
