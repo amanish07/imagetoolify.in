@@ -10,7 +10,7 @@ let logoData = null;
 let finalBlob = null;
 
 
-/* AUTO GENERATE WHILE TYPING */
+/* AUTO GENERATE */
 
 input.addEventListener("input", generateQR);
 
@@ -25,9 +25,9 @@ if (!file) return;
 
 const reader = new FileReader();
 
-reader.onload = () => {
+reader.onload = function(e){
 
-logoData = reader.result;
+logoData = e.target.result;
 
 generateQR();
 
@@ -41,83 +41,82 @@ reader.readAsDataURL(file);
 
 /* GENERATE QR */
 
-function generateQR() {
+function generateQR(){
 
-if (!input.value) {
+if(!input.value){
 
-qrBox.innerHTML = "";
-preview.style.display = "none";
+qrBox.innerHTML="";
+preview.style.display="none";
 
 return;
 
 }
 
-qrBox.innerHTML = "";
+qrBox.innerHTML="";
 
-
-/* CREATE QR */
 
 new QRCode(qrBox,{
-text: input.value,
-width: 250,
-height: 250
+text:input.value,
+width:250,
+height:250
 });
 
 
-preview.style.display = "block";
+preview.style.display="block";
 
 
-setTimeout(() => {
+setTimeout(()=>{
 
-let img = qrBox.querySelector("img");
+let qrImg = qrBox.querySelector("img");
 
-if (!img) {
+if(!qrImg){
 
 const canvasTemp = qrBox.querySelector("canvas");
 
-img = new Image();
-img.src = canvasTemp.toDataURL();
+qrImg = new Image();
+qrImg.src = canvasTemp.toDataURL();
 
 }
 
 
-/* CREATE CANVAS */
+const img = new Image();
+
+img.src = qrImg.src;
+
+
+img.onload = function(){
+
+const padding = 18;
 
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
-const qrImg = new Image();
-qrImg.src = img.src;
-
-qrImg.onload = () => {
-
-const padding = 18;
-
-canvas.width = qrImg.width + padding * 2;
-canvas.height = qrImg.height + padding * 2;
+canvas.width = img.width + padding*2;
+canvas.height = img.height + padding*2;
 
 
-/* WHITE BACKGROUND */
+/* white background */
 
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle="#ffffff";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
-/* DRAW QR */
+/* draw qr */
 
-ctx.drawImage(qrImg,padding,padding);
+ctx.drawImage(img,padding,padding);
 
 
-/* ADD LOGO IF EXISTS */
+/* add logo if exists */
 
-if (logoData){
+if(logoData){
 
 const logo = new Image();
+
 logo.src = logoData;
 
-logo.onload = () => {
+logo.onload = function(){
 
-const size = qrImg.width/4;
+const size = img.width/4;
 
 ctx.drawImage(
 logo,
@@ -127,15 +126,16 @@ size,
 size
 );
 
-finishImage(canvas,img);
+finish(canvas);
 
 };
 
 }else{
 
-finishImage(canvas,img);
+finish(canvas);
 
 }
+
 
 };
 
@@ -145,9 +145,9 @@ finishImage(canvas,img);
 
 
 
-/* FINAL IMAGE PROCESS */
+/* FINAL IMAGE */
 
-function finishImage(canvas,img){
+function finish(canvas){
 
 canvas.toBlob(function(blob){
 
@@ -155,7 +155,7 @@ finalBlob = blob;
 
 const url = URL.createObjectURL(blob);
 
-img.src = url;
+document.querySelector("#qrcode img").src = url;
 
 });
 
@@ -163,7 +163,7 @@ img.src = url;
 
 
 
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD */
 
 downloadBtn.addEventListener("click",function(e){
 
