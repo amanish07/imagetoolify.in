@@ -3,11 +3,13 @@ const qrBox = document.getElementById("qrcode");
 const preview = document.getElementById("previewBox");
 const downloadBtn = document.getElementById("download");
 const logoUpload = document.getElementById("logoUpload");
+const generateBtn = document.getElementById("generateQR");
 
 let logoData = null;
 let finalCanvas = null;
 
-input.addEventListener("input", generateQR);
+
+/* LOGO UPLOAD */
 
 logoUpload.addEventListener("change", function(){
 
@@ -19,7 +21,6 @@ const reader = new FileReader();
 reader.onload = function(e){
 
 logoData = e.target.result;
-generateQR();
 
 };
 
@@ -28,12 +29,17 @@ reader.readAsDataURL(file);
 });
 
 
+/* GENERATE BUTTON */
+
+generateBtn.addEventListener("click", generateQR);
+
+
+
 function generateQR(){
 
 if(!input.value){
 
-qrBox.innerHTML="";
-preview.style.display="none";
+alert("Please enter text or URL");
 return;
 
 }
@@ -114,6 +120,8 @@ finish(canvas);
 }
 
 
+/* FINAL IMAGE */
+
 function finish(canvas){
 
 finalCanvas = canvas;
@@ -124,6 +132,8 @@ qrBox.innerHTML = `<img src="${dataURL}" style="max-width:100%">`;
 
 }
 
+
+/* DOWNLOAD BUTTON */
 
 downloadBtn.addEventListener("click",function(){
 
@@ -148,6 +158,8 @@ URL.revokeObjectURL(url);
 
 });
 
+
+/* HAMBURGER MENU */
 
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
