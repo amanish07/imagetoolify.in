@@ -139,7 +139,7 @@ const final = canvas.toDataURL();
 img.src = final;
 
 downloadBtn.href = final;
-downloadBtn.download = "qr-code-imagetoolify.png";
+downloadBtn.download = "qr-code (imagetoolify.in).png";
 
 };
 
@@ -150,7 +150,7 @@ const final = canvas.toDataURL();
 img.src = final;
 
 downloadBtn.href = final;
-downloadBtn.download = "qr-code-imagetoolify.png";
+downloadBtn.download = "qr-code (imagetoolify.in).png";
 
 }
 
