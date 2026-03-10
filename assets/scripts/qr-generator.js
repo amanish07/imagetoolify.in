@@ -38,7 +38,7 @@ reader.readAsDataURL(file);
 
 
 
-/* GENERATE QR */
+/* GENERATE QR FUNCTION */
 
 function generateQR() {
 
@@ -57,11 +57,9 @@ qrBox.innerHTML = "";
 /* CREATE QR */
 
 new QRCode(qrBox, {
-
 text: input.value,
 width: 250,
 height: 250
-
 });
 
 
@@ -79,7 +77,6 @@ if (!img) {
 const canvasTemp = qrBox.querySelector("canvas");
 
 img = new Image();
-
 img.src = canvasTemp.toDataURL();
 
 }
@@ -95,7 +92,7 @@ qrImg.src = img.src;
 
 qrImg.onload = () => {
 
-/* WHITE BORDER */
+/* WHITE BORDER SIZE */
 
 const padding = 18;
 
@@ -109,12 +106,12 @@ ctx.fillStyle = "#ffffff";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
-/* DRAW QR */
+/* DRAW QR CODE */
 
 ctx.drawImage(qrImg, padding, padding);
 
 
-/* ADD LOGO IF EXISTS */
+/* IF LOGO EXISTS */
 
 if (logoData) {
 
@@ -133,24 +130,31 @@ size,
 size
 );
 
-
-const final = canvas.toDataURL();
-
-img.src = final;
-
-downloadBtn.href = final;
-downloadBtn.download = "qr-code (imagetoolify.in).png";
+finalizeImage();
 
 };
 
 } else {
 
-const final = canvas.toDataURL();
+finalizeImage();
 
-img.src = final;
+}
 
-downloadBtn.href = final;
+
+/* FINAL IMAGE FUNCTION */
+
+function finalizeImage(){
+
+canvas.toBlob(function(blob){
+
+const url = URL.createObjectURL(blob);
+
+img.src = url;
+
+downloadBtn.href = url;
 downloadBtn.download = "qr-code (imagetoolify.in).png";
+
+});
 
 }
 
