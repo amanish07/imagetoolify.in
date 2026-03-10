@@ -1,7 +1,3 @@
-/* ===============================
-GET ELEMENTS
-=============================== */
-
 const input = document.getElementById("qrInput");
 const qrBox = document.getElementById("qrcode");
 const preview = document.getElementById("previewBox");
@@ -9,24 +5,13 @@ const downloadBtn = document.getElementById("download");
 const logoUpload = document.getElementById("logoUpload");
 
 let logoData = null;
-let finalImage = null;
-
-
-/* ===============================
-AUTO GENERATE WHILE TYPING
-=============================== */
+let finalCanvas = null;
 
 input.addEventListener("input", generateQR);
-
-
-/* ===============================
-LOGO UPLOAD
-=============================== */
 
 logoUpload.addEventListener("change", function(){
 
 const file = this.files[0];
-
 if(!file) return;
 
 const reader = new FileReader();
@@ -34,7 +19,6 @@ const reader = new FileReader();
 reader.onload = function(e){
 
 logoData = e.target.result;
-
 generateQR();
 
 };
@@ -44,41 +28,30 @@ reader.readAsDataURL(file);
 });
 
 
-
-/* ===============================
-GENERATE QR
-=============================== */
-
 function generateQR(){
 
 if(!input.value){
 
-qrBox.innerHTML = "";
-preview.style.display = "none";
+qrBox.innerHTML="";
+preview.style.display="none";
 return;
 
 }
 
-qrBox.innerHTML = "";
-
-
-/* CREATE QR */
+qrBox.innerHTML="";
 
 new QRCode(qrBox,{
-text: input.value,
-width: 250,
-height: 250
+text:input.value,
+width:250,
+height:250
 });
 
+preview.style.display="block";
 
-preview.style.display = "block";
 
-
-setTimeout(function(){
+setTimeout(()=>{
 
 let qrImg = qrBox.querySelector("img");
-
-/* if library creates canvas */
 
 if(!qrImg){
 
@@ -89,45 +62,32 @@ qrImg.src = tempCanvas.toDataURL();
 
 }
 
+const base = new Image();
+base.src = qrImg.src;
 
-const baseImage = new Image();
-
-baseImage.src = qrImg.src;
-
-
-baseImage.onload = function(){
+base.onload = function(){
 
 const padding = 18;
 
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = baseImage.width + padding*2;
-canvas.height = baseImage.height + padding*2;
+canvas.width = base.width + padding*2;
+canvas.height = base.height + padding*2;
 
-
-/* WHITE BACKGROUND */
-
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle="#ffffff";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
-
-/* DRAW QR */
-
-ctx.drawImage(baseImage,padding,padding);
-
-
-/* ADD LOGO */
+ctx.drawImage(base,padding,padding);
 
 if(logoData){
 
 const logo = new Image();
-
 logo.src = logoData;
 
 logo.onload = function(){
 
-const size = baseImage.width/4;
+const size = base.width/4;
 
 ctx.drawImage(
 logo,
@@ -137,13 +97,13 @@ size,
 size
 );
 
-finishImage(canvas);
+finish(canvas);
 
 };
 
 }else{
 
-finishImage(canvas);
+finish(canvas);
 
 }
 
@@ -154,75 +114,52 @@ finishImage(canvas);
 }
 
 
+function finish(canvas){
 
-/* ===============================
-FINAL IMAGE PROCESS
-=============================== */
+finalCanvas = canvas;
 
-function finishImage(canvas){
+const dataURL = canvas.toDataURL("image/png");
 
-finalImage = canvas.toDataURL("image/png");
-
-/* show preview */
-
-const previewImg = qrBox.querySelector("img");
-
-if(previewImg){
-
-previewImg.src = finalImage;
-
-}else{
-
-qrBox.innerHTML = `<img src="${finalImage}" alt="QR Code">`;
-
-}
+qrBox.innerHTML = `<img src="${dataURL}" style="max-width:100%">`;
 
 }
 
 
+downloadBtn.addEventListener("click",function(){
 
-/* ===============================
-DOWNLOAD BUTTON
-=============================== */
+if(!finalCanvas) return;
 
-downloadBtn.addEventListener("click",function(e){
+finalCanvas.toBlob(function(blob){
 
-e.preventDefault();
-
-if(!finalImage) return;
+const url = URL.createObjectURL(blob);
 
 const link = document.createElement("a");
 
-link.href = finalImage;
-link.download = "qr-code-imagetoolify.png";
+link.href = url;
+link.download = "qr-code (imagetoolify.in).png";
 
 document.body.appendChild(link);
 link.click();
 document.body.removeChild(link);
 
+URL.revokeObjectURL(url);
+
 });
 
+});
 
-
-/* ===============================
-HAMBURGER MENU
-=============================== */
 
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
-menuBtn.addEventListener("click",function(){
+menuBtn.addEventListener("click",()=>{
 
 menuBtn.classList.toggle("active");
 
-if(navMenu.style.display === "flex"){
-
-navMenu.style.display = "none";
-
+if(navMenu.style.display==="flex"){
+navMenu.style.display="none";
 }else{
-
-navMenu.style.display = "flex";
-
+navMenu.style.display="flex";
 }
 
 });
