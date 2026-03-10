@@ -226,5 +226,23 @@ color:var(--footer-text);
 text-align:center;
 padding:15px;
 margin-top:30px;
+}
 
+/* Generate button spacing */
+
+.upload-box .btn{
+margin-top:8px;
+}
+
+/* better input spacing */
+
+.upload-box input{
+margin-bottom:10px;
+}
+
+/* QR image responsive */
+
+#qrcode img{
+max-width:100%;
+height:auto;
 }
