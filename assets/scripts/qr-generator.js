@@ -7,6 +7,7 @@ const downloadBtn = document.getElementById("download");
 const logoUpload = document.getElementById("logoUpload");
 
 let logoData = null;
+let finalBlob = null;
 
 
 /* AUTO GENERATE WHILE TYPING */
@@ -38,7 +39,7 @@ reader.readAsDataURL(file);
 
 
 
-/* GENERATE QR FUNCTION */
+/* GENERATE QR */
 
 function generateQR() {
 
@@ -56,7 +57,7 @@ qrBox.innerHTML = "";
 
 /* CREATE QR */
 
-new QRCode(qrBox, {
+new QRCode(qrBox,{
 text: input.value,
 width: 250,
 height: 250
@@ -67,8 +68,6 @@ preview.style.display = "block";
 
 
 setTimeout(() => {
-
-/* GET QR IMAGE OR CANVAS */
 
 let img = qrBox.querySelector("img");
 
@@ -82,7 +81,7 @@ img.src = canvasTemp.toDataURL();
 }
 
 
-/* CREATE FINAL CANVAS */
+/* CREATE CANVAS */
 
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
@@ -92,77 +91,98 @@ qrImg.src = img.src;
 
 qrImg.onload = () => {
 
-/* WHITE BORDER SIZE */
-
 const padding = 18;
 
 canvas.width = qrImg.width + padding * 2;
 canvas.height = qrImg.height + padding * 2;
 
 
-/* DRAW WHITE BACKGROUND */
+/* WHITE BACKGROUND */
 
 ctx.fillStyle = "#ffffff";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
-/* DRAW QR CODE */
+/* DRAW QR */
 
-ctx.drawImage(qrImg, padding, padding);
+ctx.drawImage(qrImg,padding,padding);
 
 
-/* IF LOGO EXISTS */
+/* ADD LOGO IF EXISTS */
 
-if (logoData) {
+if (logoData){
 
 const logo = new Image();
 logo.src = logoData;
 
 logo.onload = () => {
 
-const size = qrImg.width / 4;
+const size = qrImg.width/4;
 
 ctx.drawImage(
 logo,
-(canvas.width - size) / 2,
-(canvas.height - size) / 2,
+(canvas.width-size)/2,
+(canvas.height-size)/2,
 size,
 size
 );
 
-finalizeImage();
+finishImage(canvas,img);
 
 };
 
-} else {
+}else{
 
-finalizeImage();
+finishImage(canvas,img);
+
+}
+
+};
+
+},300);
 
 }
 
 
-/* FINAL IMAGE FUNCTION */
 
-function finalizeImage(){
+/* FINAL IMAGE PROCESS */
+
+function finishImage(canvas,img){
 
 canvas.toBlob(function(blob){
+
+finalBlob = blob;
 
 const url = URL.createObjectURL(blob);
 
 img.src = url;
 
-downloadBtn.href = url;
-downloadBtn.download = "qr-code (imagetoolify.in).png";
-
 });
 
 }
 
-};
 
-}, 300);
 
-}
+/* DOWNLOAD BUTTON */
+
+downloadBtn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+if(!finalBlob) return;
+
+const link = document.createElement("a");
+
+link.href = URL.createObjectURL(finalBlob);
+link.download = "qr-code (imagetoolify.in).png";
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
+
+});
 
 
 
@@ -171,19 +191,14 @@ downloadBtn.download = "qr-code (imagetoolify.in).png";
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
-
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click",()=>{
 
 menuBtn.classList.toggle("active");
 
-if (navMenu.style.display === "flex") {
-
-navMenu.style.display = "none";
-
-} else {
-
-navMenu.style.display = "flex";
-
+if(navMenu.style.display==="flex"){
+navMenu.style.display="none";
+}else{
+navMenu.style.display="flex";
 }
 
 });
