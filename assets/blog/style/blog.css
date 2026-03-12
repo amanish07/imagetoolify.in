@@ -233,3 +233,11 @@ a {
   color: #0000EE;
   font-weight: bold;
 }
+
+
+.post-meta{
+font-size:14px;
+color:#666;
+margin-top:-10px;
+margin-bottom:20px;
+}
