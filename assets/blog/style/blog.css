@@ -226,3 +226,9 @@ footer a{
   margin:0 6px;
 }
 footer a:hover{text-decoration:underline}
+
+a {
+  text-decoration: none;
+  color: #0000EE;
+  font-weight: bold;
+}
