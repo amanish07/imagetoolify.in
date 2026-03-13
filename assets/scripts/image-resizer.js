@@ -137,7 +137,7 @@ document.getElementById("processBtn").onclick = async () => {
   if (formatSel.value === "image") {
     downloadBtn.onclick = null;
     downloadBtn.href = url;
-    downloadBtn.download = "(imagetoolify.in).jpg";
+    downloadBtn.download = "(imagetoolify.in).png";
   } else {
     downloadBtn.onclick = null;
     downloadBtn.onclick = () => {
