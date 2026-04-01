@@ -276,3 +276,9 @@ footer a:hover {
     padding:0 14px;
   }
 }
+
+        .card img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
