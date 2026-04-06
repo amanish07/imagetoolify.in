@@ -307,3 +307,19 @@ footer a:hover {
 .custom-text-link:hover {
   text-decoration: underline; /* hover par optional */
 }
+
+.crop-wrapper{
+margin-top:20px;
+}
+
+.crop-toolbar{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:10px;
+}
+
+.crop-container{
+max-width:100%;
+max-height:420px;
+}
