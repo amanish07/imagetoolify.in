@@ -218,3 +218,16 @@
       text-decoration: underline
     }
     
+
+    .blog-thumb {
+      width: 88%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    .blog-thumb {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
