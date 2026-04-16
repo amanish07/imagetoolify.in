@@ -35,6 +35,8 @@
 <priority>0.8</priority>
 </url>
 
+
+<!-- Blog Posts -->
 <url>
 <loc>https://imagetoolify.in/blog/bihar-caste-certificate-apply-kaise-kare-2026</loc>
 <priority>0.8</priority>
@@ -45,7 +47,11 @@
 <priority>0.8</priority>
 </url>
 
-<!-- Blog Posts -->
+<url>
+<loc>https://www.imagetoolify.in/blog/bihar-residence-certificate-apply-kaise-kare-2026/</loc>
+<priority>0.8</priority>
+</url>
+
 <url>
 <loc>https://imagetoolify.in/blog/rtps-new-rules-2026</loc>
 <priority>0.8</priority>
@@ -70,6 +76,7 @@
 <loc>https://imagetoolify.in/blog/PAN-Card-New-Rules-From-1-April-2026/</loc>
 <priority>0.8</priority>
 </url>
+
 
 <!-- Static Pages -->
 <url>
