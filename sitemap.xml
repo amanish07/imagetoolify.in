@@ -94,6 +94,12 @@
 
 
 <!-- Static Pages -->
+
+    <url>
+<loc>https://www.imagetoolify.in/aman-raj</loc>
+<priority>0.6</priority>
+</url>
+    
 <url>
 <loc>https://imagetoolify.in/about</loc>
 <priority>0.6</priority>
