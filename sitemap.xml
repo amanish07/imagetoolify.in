@@ -1,139 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<!-- Home -->
-<url>
-<loc>https://imagetoolify.in/</loc>
-<priority>1.0</priority>
-</url>
+    <!-- Home -->
+    <url>
+        <loc>https://imagetoolify.in/</loc>
+        <priority>1.0</priority>
+    </url>
 
-<!-- Tools -->
-<url>
-<loc>https://imagetoolify.in/image-resizer</loc>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/image-converter</loc>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/pdf-tools</loc>
-<priority>0.9</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/qr-generator/</loc>
-<priority>0.9</priority>
-</url>
-
-
+    <!-- Tools -->
+    <url>
+        <loc>https://imagetoolify.in/image-resizer</loc>
+        <priority>0.9</priority>
+    </url>
 
     <url>
-<loc>https://www.imagetoolify.in/yt-thumbnail-downloader</loc>
-<priority>0.9</priority>
-</url>
-
-
-
-   
-
-<!-- Blog Main -->
-<url>
-<loc>https://imagetoolify.in/blog</loc>
-<priority>0.8</priority>
-</url>
-
-
-<!-- Blog Posts -->
-
-    
-
-    
-    
-    <url>
-<loc>https://www.imagetoolify.in/blog/bihar-certificate-required-documents-2026/</loc>
-<priority>0.8</priority>
-</url>
-  
-  <url>
-<loc>https://www.imagetoolify.in/blog/income-certificate-apply-2026/</loc>
-<priority>0.8</priority>
-</url>
-  
-<url>
-<loc>https://imagetoolify.in/blog/bihar-caste-certificate-apply-kaise-kare-2026</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/ofss-bihar-11th-merit-list-apply-2026</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://www.imagetoolify.in/blog/bihar-residence-certificate-apply-kaise-kare-2026/</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/rtps-new-rules-2026</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/how-to-apply-pan-card</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/pan-card-rules-salaried-employees-2026</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/pan-card-new-rules-2026</loc>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://imagetoolify.in/blog/PAN-Card-New-Rules-From-1-April-2026/</loc>
-<priority>0.8</priority>
-</url>
-
-
-<!-- Static Pages -->
+        <loc>https://imagetoolify.in/image-converter</loc>
+        <priority>0.9</priority>
+    </url>
 
     <url>
-<loc>https://www.imagetoolify.in/aman-raj</loc>
-<priority>0.6</priority>
-</url>
-    
-<url>
-<loc>https://imagetoolify.in/about</loc>
-<priority>0.6</priority>
-</url>
+        <loc>https://imagetoolify.in/pdf-tools</loc>
+        <priority>0.9</priority>
+    </url>
 
-<url>
-<loc>https://imagetoolify.in/faq</loc>
-<priority>0.6</priority>
-</url>
+    <url>
+        <loc>https://imagetoolify.in/qr-generator</loc>
+        <priority>0.9</priority>
+    </url>
 
-<url>
-<loc>https://imagetoolify.in/contact</loc>
-<priority>0.6</priority>
-</url>
+    <url>
+        <loc>https://imagetoolify.in/yt-thumbnail-downloader</loc>
+        <priority>0.9</priority>
+    </url>
 
-<url>
-<loc>https://imagetoolify.in/privacy-policy</loc>
-<priority>0.5</priority>
-</url>
+    <!-- Blog Main -->
+    <url>
+        <loc>https://imagetoolify.in/blog</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://imagetoolify.in/terms</loc>
-<priority>0.5</priority>
-</url>
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://imagetoolify.in/blog/bihar-certificate-required-documents-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/income-certificate-apply-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/bihar-caste-certificate-apply-kaise-kare-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/ofss-bihar-11th-merit-list-apply-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/bihar-residence-certificate-apply-kaise-kare-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/rtps-new-rules-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/how-to-apply-pan-card</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/pan-card-rules-salaried-employees-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/pan-card-new-rules-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/blog/PAN-Card-New-Rules-From-1-April-2026</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Static Pages -->
+    <url>
+        <loc>https://imagetoolify.in/aman-raj</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/about</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/faq</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/contact</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/privacy-policy</loc>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://imagetoolify.in/terms</loc>
+        <priority>0.5</priority>
+    </url>
 
 </urlset>
