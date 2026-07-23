@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character Encoding & Responsive Viewport Settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+
+    <!-- Primary Title & Basic SEO Meta Tags (Google Search ke liye) -->
+    <title>YouTube Thumbnail Downloader - imagetoolify | Fast Loading</title>
+    <meta name="description"
+        content="Download HD/4K YouTube thumbnails instantly. Extract video titles and channel names lightning fast with imagetoolify. Free, fast & easy to use.">
+    <meta name="keywords"
+        content="youtube thumbnail downloader, download yt thumbnail, 4k thumbnail downloader, hd thumbnail saver, imagetoolify">
+    <meta name="author" content="imagetoolify">
+    <meta name="robots" content="index, follow"> <!-- Google bots ko page index karne allow karta hai -->
+
+    <!-- Canonical Tag (Aapke exact URL ke saath) -->
+    <link rel="canonical" href="https://imagetoolify.in/yt-thumbnail-downlader">
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/ImageToolifyLogo.png">
+
+    <!-- Open Graph (OG) Meta Tags (WhatsApp, Facebook, Telegram link preview ke liye) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imagetoolify.in/yt-thumbnail-downlader">
+    <meta property="og:title" content="YouTube Thumbnail Downloader - imagetoolify">
+    <meta property="og:description"
+        content="Download HD, Full HD, and 4K YouTube video thumbnails instantly. Extract titles & channel details in one click.">
+
+    <!-- AAPKA NAYA OG BANNER PATH HERE -->
+    <meta property="og:image" content="https://imagetoolify.in/yt-thumbnail-downlader/img/banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="imagetoolify">
+
+    <!-- Twitter Card Meta Tags (X / Twitter share preview ke liye) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://imagetoolify.in/yt-thumbnail-downlader">
+    <meta name="twitter:title" content="YouTube Thumbnail Downloader - imagetoolify">
+    <meta name="twitter:description"
+        content="Download HD/4K YouTube thumbnails instantly & extract video details fast.">
+    <meta name="twitter:image" content="https://imagetoolify.in/yt-thumbnail-downlader/img/banner.png">
+
+    <!-- CSS External Files & Font Awesome CDN -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo"> imagetoolify</a>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="logo-box"><i class="fa-solid fa-clapperboard"></i></div>
+            <h1>YouTube Thumbnail Downloader</h1>
+            <p class="description">Download HD/4K thumbnails & extract video title & channel — lightning fast <i
+                    class="fa-solid fa-bolt"></i></p>
+
+            <div class="input-wrapper">
+                <input type="text" id="url" placeholder="Paste YouTube link here..." autocomplete="off"
+                    enterkeyhint="go">
+                <button class="get-btn" id="fetchBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Get
+                    Thumbnail</button>
+            </div>
+
+            <div class="quality-selector" id="qualitySelector" style="display: none;">
+                <button data-quality="maxres" class="quality-btn active"><i class="fa-solid fa-camera"></i> Max
+                    Quality</button>
+                <button data-quality="hqdefault" class="quality-btn"><i class="fa-solid fa-film"></i> HD (480p)</button>
+                <button data-quality="mqdefault" class="quality-btn"><i class="fa-solid fa-image"></i> Medium</button>
+                <button data-quality="default" class="quality-btn"><i class="fa-solid fa-mobile-screen-button"></i>
+                    Basic</button>
+            </div>
+
+            <div class="error" id="error"><i class="fa-solid fa-triangle-exclamation"></i> Invalid YouTube URL — Please
+                check and try again.</div>
+            <div class="loader" id="loader">
+                <div class="spinner"></div><span>Loading thumbnail...</span>
+            </div>
+
+            <div class="preview" id="preview">
+                <div class="video-title-card" id="videoInfoCard">
+                    <div class="video-title" id="videoTitle">Video Title</div>
+                    <div class="title-actions">
+                        <button class="copy-title-btn" id="copyTitleBtn"><i class="fa-regular fa-clipboard"></i> Copy
+                            Title</button>
+                        <button class="copy-channel-btn" id="copyChannelBtn"><i class="fa-solid fa-bullhorn"></i> Copy
+                            Channel</button>
+                    </div>
+                    <div class="channel-row">
+                        <div class="channel-icon" id="channelIcon"><i class="fa-solid fa-video"></i></div>
+                        <span class="channel-name" id="channelName">Channel Name</span>
+                    </div>
+                </div>
+
+                <div class="preview-image">
+                    <img id="thumbnail" alt="Thumbnail Preview" crossorigin="anonymous">
+                </div>
+                <div class="res-badge" id="resolutionBadge"><i class="fa-solid fa-sparkles"></i> High Resolution</div>
+
+                <div class="actions">
+                    <button class="action-btn download-btn" id="downloadBtn"><i class="fa-solid fa-download"></i>
+                        Download</button>
+                    <button class="action-btn copy-btn" id="copyUrlBtn"><i class="fa-solid fa-link"></i> Copy Image
+                        URL</button>
+                </div>
+            </div>
+
+            <!-- HOW TO USE SECTION -->
+            <div class="how-to-use-card">
+                <h2 class="how-to-use-title">
+                    <i class="fa-solid fa-thumbtack"></i> How to Download YouTube Thumbnails in High Quality (HD / 4K)?
+                </h2>
+
+                <p class="guide-intro">
+                    Downloading high-resolution thumbnails from YouTube videos, Shorts, and Livestreams is now quick,
+                    free, and simple. Whether you are a content creator looking for design inspiration, a digital
+                    marketer analyzing competitors, or a viewer saving custom cover graphics, our online <b>YouTube
+                        Thumbnail Downloader</b> helps you save full HD and 4K images in just a few clicks. Follow our
+                    step-by-step guide below to extract video thumbnails instantly.
+                </p>
+
+                <!-- STEP-BY-STEP PROCESS -->
+                <ul class="steps-list">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <div>
+                            <strong>Copy the YouTube Video, Short, or Livestream URL:</strong>
+                            <p>Open YouTube on your mobile device, tablet, or web browser. Search for the video, Short,
+                                or upcoming livestream whose cover image you want to extract. Click the <b>Share</b>
+                                button under the video player and tap <b>Copy Link</b> (or copy the direct address URL
+                                from your browser’s address bar).</p>
+                        </div>
+                    </li>
+
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <div>
+                            <strong>Paste Link & Extract Metadata:</strong>
+                            <p>Navigate to the input field at the top of this page. Right-click and paste (or tap and
+                                hold on mobile) your copied link into the text box. Then, click the <b><i
+                                        class="fa-solid fa-wand-magic-sparkles"></i> Get Thumbnail</b> button. Our tool
+                                will immediately process the link, fetch the official YouTube metadata, and display the
+                                video title along with channel information.</p>
+                        </div>
+                    </li>
+
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <div>
+                            <strong>Select Resolution & Save Image:</strong>
+                            <p>Once the preview generates, select your desired resolution from the quality selector
+                                options (Max Quality 4K/HD, 480p HD, Medium, or Basic). Preview the image quality and
+                                click the <b><i class="fa-solid fa-download"></i> Download</b> button to save the
+                                original JPG file directly to your device storage.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- KEY FEATURES SECTION -->
+                <div class="features-section">
+                    <h3><i class="fa-solid fa-star"></i> Why Use Our YouTube Thumbnail Downloader Tool?</h3>
+                    <p>Our online downloader is optimized for maximum speed, security, and convenience. Here are some of
+                        the key benefits of using ImageToolify:</p>
+
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-bolt"></i> <b>Instant Extraction:</b> Get full-resolution cover art
+                            within seconds without page reloads.</li>
+                        <li><i class="fa-solid fa-image"></i> <b>Multiple Quality Options:</b> Access maximum quality
+                            1080p/4K (MaxRes), HD 720p (HQ), Medium (MQ), and Standard (SD) resolution options.</li>
+                        <li><i class="fa-solid fa-copy"></i> <b>Extract Video Metadata:</b> Easily copy video titles and
+                            channel names in one click for quick reference and content research.</li>
+                        <li><i class="fa-solid fa-shield-halved"></i> <b>100% Free & Safe:</b> No software installation,
+                            registration, or browser extensions required. Completely safe and free for unlimited use.
+                        </li>
+                        <li><i class="fa-solid fa-mobile-screen"></i> <b>Cross-Platform Support:</b> Works seamlessly
+                            across Android smartphones, iPhones, iPads, Windows PCs, and macOS devices.</li>
+                    </ul>
+                </div>
+
+                <!-- FREQUENTLY ASKED QUESTIONS -->
+                <div class="faq-mini-section">
+                    <h3><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions (FAQs)</h3>
+
+                    <div class="faq-item">
+                        <strong>Q1. Is it legal to download YouTube video thumbnails?</strong>
+                        <p>Yes, downloading thumbnails for personal use, design study, content analysis, or educational
+                            purposes is completely legal. However, if you plan to reuse another creator's thumbnail
+                            image publicly, make sure you have proper permissions or modify it to avoid copyright
+                            infringement.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <strong>Q2. Why is Max Quality (HD) not available for some videos?</strong>
+                        <p>The <i>MaxResDefault</i> quality (1080p/4K) is only available if the original creator
+                            uploaded a high-definition thumbnail when publishing their video. If a high-res cover was
+                            not uploaded by the channel, our tool automatically falls back to the next highest
+                            resolution available (480p HD).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <strong>Q3. Where are downloaded thumbnails saved on my device?</strong>
+                        <p>Downloaded images are automatically saved to your web browser’s default downloads folder
+                            (such as the <i>Downloads</i> folder on Windows/Mac, or the <i>Files/Gallery</i> app on
+                            Android and iOS devices).</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <a href="/blog">Blog</a> |
+        <a href="/about">About Us</a> |
+        <a href="/faq">FAQ</a> |
+        <a href="/privacy-policy">Privacy Policy</a> |
+        <a href="/terms">Terms</a> |
+        <a href="/contact">Contact</a>
+        </div>
+        <div class="footer-text">
+            © 2026 imagetoolify.in — All Rights Reserved.
+            <div class="toast" id="toast"><i class="fa-regular fa-clipboard"></i> Copied!</div>
+
+            <script src="/script/main.js"></script>
+</body>
+
+</html>
