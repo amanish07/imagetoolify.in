@@ -12,15 +12,15 @@
 
   <!-- ✅ BASIC SEO (IMPROVED) -->
   <meta name="description"
-    content="imagetoolify is a free online platform to resize images, compress photos, convert images to PDF, convert PDF to images, and change image formats like JPG, PNG, JPEG, and WEBP. Fast, secure, and easy to use.">
+    content="imagetoolify is a free online platform to resize images, compress photos, convert images to PDF, convert PDF to images, download YouTube thumbnails, and change image formats like JPG, PNG, JPEG, and WEBP. Fast, secure, and easy to use.">
   <meta name="keywords"
-    content="image tools online, image resizer, image size reducer, image converter, jpg to png, png to jpg, jpeg converter, webp converter, image to pdf, pdf to image, online image tools">
+    content="image tools online, image resizer, image size reducer, image converter, jpg to png, png to jpg, jpeg converter, webp converter, image to pdf, pdf to image, youtube thumbnail downloader, online image tools">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="imagetoolify – Free Image & PDF Tools">
   <meta property="og:description"
-    content="Resize, compress and convert images and PDFs online. Free tools for Image Resizer, Image Converter, JPG to PDF and PDF to Image.">
+    content="Resize, compress and convert images and PDFs online. Free tools for Image Resizer, Image Converter, JPG to PDF, PDF to Image, and YouTube Thumbnail Downloader.">
   <meta property="og:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://imagetoolify.in/">
@@ -33,9 +33,11 @@
     content="Resize, compress and convert images and PDFs online using free imagetoolify tools.">
   <meta name="twitter:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
 
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <!-- CSS -->
   <link rel="stylesheet" href="assets/styles/main.css">
-
 
   <link rel="canonical" href="https://imagetoolify.in/">
 
@@ -45,7 +47,6 @@
 </head>
 
 <body>
-
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
@@ -83,7 +84,7 @@
 
       <a href="/image-resizer" class="card-link">
         <div class="card">
-          <span>🖼️</span>
+          <i class="fas fa-image card-icon"></i>
           <h3>Image Resizer</h3>
           <p>Resize images in kb for PAN Card, Voter ID and other documents</p>
         </div>
@@ -91,7 +92,7 @@
 
       <a href="/pdf-tools" class="card-link">
         <div class="card">
-          <span>📄</span>
+          <i class="fas fa-file-pdf card-icon"></i>
           <h3>PDF Tools</h3>
           <p>Convert Image to PDF and PDF to Image online</p>
         </div>
@@ -99,27 +100,25 @@
 
       <a href="/image-converter" class="card-link">
         <div class="card">
-          <span>🔁</span>
+          <i class="fas fa-sync-alt card-icon"></i>
           <h3>Image Converter</h3>
           <p>Convert images to JPG, JPEG, PNG and WEBP formats</p>
         </div>
       </a>
 
-
       <a href="/qr-generator" class="card-link">
         <div class="card">
-          <img src="qr-generator/qr.png" class="card-icon" alt="QR Code Generator">
+          <i class="fas fa-qrcode card-icon"></i>
           <h3>QR Code Generator</h3>
           <p>Create QR codes for URL, text and add custom logo</p>
         </div>
       </a>
 
-
-      <a href="/yt-thumbnail-downlader" class="card-link">
+      <a href="/yt-thumbnail-downloader" class="card-link">
         <div class="card">
-          <img src="qr-generator/qr.png" class="card-icon" alt="QR Code Generator">
-          <h3>/YT Thumbnail Downlader</h3>
-          <p>Create QR codes for URL, text and add custom logo</p>
+          <i class="fab fa-youtube card-icon"></i>
+          <h3>YT Thumbnail Downloader</h3>
+          <p>Download full HD YouTube video thumbnails easily in one click</p>
         </div>
       </a>
 
@@ -132,7 +131,7 @@
       <p>
         <strong>imagetoolify</strong> is a free online platform designed to help users resize,
         compress, crop, and convert images and PDFs easily. Whether you need to reduce image size
-        for documents, convert images into different formats, generate PDFs from images, or create
+        for documents, convert images into different formats, generate PDFs from images, download high-quality YouTube thumbnails, or create
         QR codes using the QR Code Generator, imagetoolify provides fast and reliable tools that
         work directly in your browser. The platform is simple to use and supports mobile, tablet,
         and desktop devices for quick access anytime. No registration or software installation is
@@ -140,14 +139,15 @@
       </p>
 
       <ul>
-        <li>Free online image resizer in kb to adjust image and signature images size for PAN Card, Voter ID, passport
-          and forms.</li>
-        <li>Easy image converter to change JPG, JPEG, PNG and WEBP image formats.</li>
+        <li>Free online image resizer in kb to adjust image and signature images size for PAN Card, Voter ID, passport, and forms.</li>
+        <li>Easy image converter to change JPG, JPEG, PNG, and WEBP image formats.</li>
         <li>PDF tools to convert Image to PDF and PDF to Image quickly.</li>
-        <li>Generate QR of any links and text with custom logo</li>
+        <li>Generate QR codes for any link or text with custom logo options.</li>
+        <li>Download high-resolution YouTube video thumbnails (HD, HQ, 1080p, 4K) instantly by URL.</li>
         <li>All tools work directly in your browser, keeping your files private and secure.</li>
         <li>Mobile-friendly and works smoothly on both desktop and smartphones.</li>
       </ul>
+
       <div class="section">
         <h2>How to Use imagetoolify</h2>
 
@@ -158,24 +158,25 @@
 
         <p>
           First, open the tool you want to use, such as Image Resizer, Image Compressor,
-          Image Cropper, Image Converter, QR Code Generator, or PDF Tools. Then upload
-          your image, text, link, or PDF file from your device.
+          Image Cropper, Image Converter, QR Code Generator, YT Thumbnail Downloader, or PDF Tools. Then upload
+          your image, text, link, video URL, or PDF file from your device.
         </p>
 
         <p>
-          After uploading, select the required options. You can resize images by size or pixels,
+          After uploading or pasting your link, select the required options. You can resize images by size or pixels,
           compress image size in KB, crop images, convert images to JPG, PNG, JPEG, or WEBP,
-          generate QR codes for text or URLs, convert images to PDF, or convert PDF files
+          generate QR codes for text or URLs, extract thumbnail images from YouTube videos, convert images to PDF, or convert PDF files
           back to images.
         </p>
 
         <p>
-          Once processing is complete, simply download the final file to your device.
+          Once processing is complete, simply download the final file or thumbnail image to your device.
           Your files are not stored on our servers, so your data stays private and secure.
         </p>
       </div>
     </div>
   </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
