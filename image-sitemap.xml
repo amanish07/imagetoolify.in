@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Logo -->
+  <url>
+    <loc>https://www.imagetoolify.in/assets/images/ImageToolifyLogo.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/assets/images/ImageToolifyLogo.png</image:loc>
+      <image:title>ImageToolify Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- Main Banner -->
+  <url>
+    <loc>https://www.imagetoolify.in/assets/images/ImageToolifyBanner.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/assets/images/ImageToolifyBanner.png</image:loc>
+      <image:title>ImageToolify Banner</image:title>
+    </image:image>
+  </url>
+
+  <!-- Tool Banner -->
+  <url>
+    <loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</image:loc>
+      <image:title>YouTube Downloader Banner</image:title>
+    </image:image>
+  </url>
+
+  <!-- Author Profile Image -->
+  <url>
+    <loc>https://www.imagetoolify.in/aman-raj/Aman-Raj.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/aman-raj/Aman-Raj.png</image:loc>
+      <image:title>Aman Raj Profile Image</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Images -->
+  <url>
+    <loc>https://www.imagetoolify.in/blog/bihar-certificate-required-documents-2026/Bihar-Certificate-Documents.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/blog/bihar-certificate-required-documents-2026/Bihar-Certificate-Documents.png</image:loc>
+      <image:title>Bihar Certificate Documents Image</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.imagetoolify.in/blog/income-certificate-apply-2026/income%20certificate.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/blog/income-certificate-apply-2026/income%20certificate.png</image:loc>
+      <image:title>Income Certificate Image</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.imagetoolify.in/blog/bihar-residence-certificate-apply-kaise-kare-2026/bihar-residence-certificate.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/blog/bihar-residence-certificate-apply-kaise-kare-2026/bihar-residence-certificate.png</image:loc>
+      <image:title>Bihar Residence Certificate Image</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.imagetoolify.in/blog/ofss-bihar-11th-merit-list-apply-2026/ofss.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/blog/ofss-bihar-11th-merit-list-apply-2026/ofss.png</image:loc>
+      <image:title>OFSS Bihar Image</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.imagetoolify.in/blog/bihar-caste-certificate-apply-kaise-kare-2026/Bihar-Caste-Certificate.png</loc>
+    <image:image>
+      <image:loc>https://www.imagetoolify.in/blog/bihar-caste-certificate-apply-kaise-kare-2026/Bihar-Caste-Certificate.png</image:loc>
+      <image:title>Bihar Caste Certificate Image</image:title>
+    </image:image>
+  </url>
+
+</urlset>
