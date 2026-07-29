@@ -27,10 +27,13 @@ let currentQuality = "maxres";
 let currentThumbnailUrl = "";
 let currentVideoData = { title: "", channel: "" };
 
+// EXTRACT VIDEO ID (INCLUDES LIVE STREAMS & SHORTS)
 function extractVideoId(url) {
     if (!url) return "";
     let cleanUrl = url.trim();
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+
+    // Regex supporting regular videos, shorts, live streams, embed links
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|live\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = cleanUrl.match(regExp);
     if (match && match[2].length === 11) return match[2];
 
@@ -38,6 +41,7 @@ function extractVideoId(url) {
         const parsed = new URL(cleanUrl);
         if (parsed.hostname.includes("youtube.com")) {
             if (parsed.pathname.startsWith("/shorts/")) return parsed.pathname.split("/")[2];
+            if (parsed.pathname.startsWith("/live/")) return parsed.pathname.split("/")[2]; // Live Stream Support
             return parsed.searchParams.get("v");
         } else if (parsed.hostname === "youtu.be") {
             return parsed.pathname.slice(1);
