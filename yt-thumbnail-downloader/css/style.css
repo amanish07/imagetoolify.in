@@ -39,69 +39,80 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 70px;
+    padding-top: 0;
 }
 
-/* NAVBAR */
+/* ==========================================
+   NAVBAR (SLIM & PERFECTLY CENTERED)
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.45);
+    }
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
-    padding: 12px 20px;
+    padding: 10px 18px;
+    /* Height kam karne ke liye padding kam kiya */
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
+    position: relative;
+    z-index: 9999;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-    letter-spacing: -0.3px;
-    background: #fff;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
 }
 
+/* HAMBURGER BUTTON (MOBILE) */
 .menu-btn {
-    width: 26px;
-    height: 20px;
+    width: 28px;
+    height: 22px;
     position: relative;
     cursor: pointer;
 }
 
 .menu-btn span {
     position: absolute;
-    height: 2.5px;
+    height: 3px;
     width: 100%;
     background: #fff;
-    transition: .3s;
-    border-radius: 3px;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 .menu-btn span:nth-child(1) {
-    top: 0
+    top: 0;
 }
 
 .menu-btn span:nth-child(2) {
-    top: 9px
+    top: 9px;
 }
 
 .menu-btn span:nth-child(3) {
-    top: 18px
+    top: 18px;
 }
 
+/* CROSS STATE */
 .menu-btn.active span:nth-child(1) {
     transform: rotate(45deg);
     top: 9px;
@@ -119,52 +130,94 @@ body {
 .nav-menu {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.96);
-    backdrop-filter: blur(12px);
+    width: 100%;
+    background: #111827;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
 }
 
 .nav-menu a {
+    display: block;
+    padding: 16px 20px;
     color: #fff;
-    padding: 14px 20px;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    font-weight: 500;
-    transition: 0.2s;
-    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
 .nav-menu a:hover {
-    background: rgba(79, 91, 255, 0.2);
-    padding-left: 28px;
+    background: #1f2937;
 }
 
-@media(min-width:768px) {
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* DESKTOP NAV */
+@media (min-width:768px) {
+
     .menu-btn {
         display: none;
     }
 
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, .35);
+        backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .nav-menu {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -58%);
         display: flex !important;
         flex-direction: row;
+        align-items: center;
         justify-content: center;
+        gap: 8px;
         background: none;
-        padding-bottom: 0;
     }
 
     .nav-menu a {
+        padding: 8px 16px;
         border: none;
-        padding: 0 16px;
-        font-weight: 500;
+        color: #fff;
+        font-size: 15px;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: .3s;
     }
 
     .nav-menu a:hover {
-        background: none;
-        padding: 0 16px;
-        color: #a5b4fc;
+        background: rgba(255, 255, 255, .08);
+        color: #60a5fa;
     }
 }
 
-/* MAIN CONTAINER */
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
 .wrapper {
     position: relative;
     z-index: 1;
@@ -173,6 +226,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 16px;
+    margin-top: 50px;
+    /* Slim navbar ke hisab se top margin */
 }
 
 .container {
@@ -345,8 +400,13 @@ h1 {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* PREVIEW CARD */
@@ -361,6 +421,7 @@ h1 {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -515,7 +576,7 @@ h1 {
 }
 
 /* ==========================================
-   HOW TO USE & DETAILED GUIDE SECTION (SPACING FIX)
+   HOW TO USE & DETAILED GUIDE SECTION
    ========================================== */
 .how-to-use-card {
     margin-top: 40px;
@@ -724,10 +785,12 @@ footer a:hover {
     color: #a5b4fc;
 }
 
-/* RESPONSIVE DESIGN (MOBILE & TABLET) */
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================== */
 @media(max-width:600px) {
-    body {
-        padding-top: 65px;
+    .wrapper {
+        margin-top: 45px;
     }
 
     .container {
