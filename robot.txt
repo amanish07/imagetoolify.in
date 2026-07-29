@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://imagetoolify.in/sitemap.xml
+Sitemap: https://imagetoolify.in/image-sitemap.xml
