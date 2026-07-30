@@ -33,6 +33,16 @@
         <priority>0.9</priority>
     </url>
 
+
+
+     <!-- Imagetoolify Sitemap -->
+
+    <url>
+        <loc>https://www.imagetoolify.in/imagetoolify-sitemap/</loc>
+        <priority>0.8</priority>
+    </url>
+
+    
     <!-- Blog Main -->
     <url>
         <loc>https://imagetoolify.in/blog</loc>
