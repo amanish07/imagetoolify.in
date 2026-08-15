@@ -21,6 +21,15 @@
   </url>
 
   <!-- Tool Banner -->
+        <url>
+  <loc>https://www.imagetoolify.in/pdf-tools/</loc>
+  <image:image>
+    <image:loc>https://www.imagetoolify.in/pdf-tools/imgs/pdf-tools.png</image:loc>
+    <image:title>imagetoolify PDF Tools</image:title>
+  </image:image>
+</url>
+
+        
 <url>
     <loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</loc>
     <image:image>
