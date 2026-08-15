@@ -21,13 +21,21 @@
   </url>
 
   <!-- Tool Banner -->
-  <url>
+<url>
     <loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</loc>
     <image:image>
-      <image:loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</image:loc>
-      <image:title>YouTube Downloader Banner</image:title>
+        <image:loc>https://www.imagetoolify.in/yt-thumbnail-downloader/img/banner.png</image:loc>
+        <image:title>YouTube Downloader Banner</image:title>
     </image:image>
-  </url>
+</url>
+
+<url>
+    <loc>https://www.imagetoolify.in/pdf-tools/</loc>
+    <image:image>
+        <image:loc>https://www.imagetoolify.in/pdf-tools/imgs/pdf-tools.png</image:loc>
+        <image:title>imagetoolify PDF Tools</image:title>
+    </image:image>
+</url>
 
   <!-- Author Profile Image -->
   <url>
