@@ -1,27 +1,25 @@
 # ImageToolify
 
-**ImageToolify** is a free online toolkit for everyday image and PDF tasks.
+> A simple, fast and privacy-focused toolkit for everyday image and PDF tasks.
 
-### ✨ Features
+## Features
 
-* 🖼️ Resize, crop & compress images
-* 🔄 Convert JPG, PNG, JPEG & WEBP
-* 📄 Image to PDF & PDF to Image
-* 🔳 Create custom QR codes
-* ▶️ Download YouTube thumbnails
-* 🔒 Privacy-focused browser-based tools
-
-### 🚀 Highlights
-
-* Free to use
+* Resize, crop and compress images
+* Convert JPG, JPEG, PNG and WEBP
+* Convert images to PDF and PDF to images
+* Generate custom QR codes
+* Download YouTube thumbnails
+* Browser-based file processing
 * No account required
-* Works on mobile & desktop
-* Simple and fast interface
 
-### 🌐 Website
+## Why ImageToolify?
 
-https://www.imagetoolify.in/
+ImageToolify brings essential file utilities together in one clean and easy-to-use platform. It is designed to work smoothly across desktop, tablet and mobile devices.
 
-### 👨‍💻 Created By
+## Website
 
-**Aman Raj & Anish Rawani** ❤️
+**[imagetoolify.in](https://www.imagetoolify.in/)**
+
+## Created By
+
+**Aman Raj & Anish Rawani**
