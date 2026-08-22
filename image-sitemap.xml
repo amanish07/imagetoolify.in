@@ -15,15 +15,25 @@
     </image:image>
   </url>
 
-  <!-- Tools Pages -->
+  <!-- Image to PDF -->
   <url>
-    <loc>https://imagetoolify.in/pdf-tools</loc>
+    <loc>https://imagetoolify.in/image-to-pdf</loc>
     <image:image>
-      <image:loc>https://imagetoolify.in/pdf-tools/imgs/pdf-tools.png</image:loc>
-      <image:title>imagetoolify PDF Tools</image:title>
+      <image:loc>https://imagetoolify.in/image-to-pdf/img/banner.png</image:loc>
+      <image:title>Image to PDF Converter Banner</image:title>
     </image:image>
   </url>
 
+  <!-- PDF to Image -->
+  <url>
+    <loc>https://imagetoolify.in/pdf-to-image</loc>
+    <image:image>
+      <image:loc>https://imagetoolify.in/pdf-to-image/img/banner.png</image:loc>
+      <image:title>PDF to Image Converter Banner</image:title>
+    </image:image>
+  </url>
+
+  <!-- YouTube Thumbnail Downloader -->
   <url>
     <loc>https://imagetoolify.in/yt-thumbnail-downloader</loc>
     <image:image>
