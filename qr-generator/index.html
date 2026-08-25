@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Multi-Type QR Code Generator with Logo & Padding | imagetoolify</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="description"
+        content="Generate custom QR codes for URL, Text, WiFi, WhatsApp, UPI, vCard, Location and more with custom logo, adjustable margin, and complete guide. 100% Free online tool.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://imagetoolify.in/qr-generator/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imagetoolify.in/qr-generator/">
+    <meta property="og:title" content="Multi-Type QR Code Generator with Logo & Padding | imagetoolify">
+    <meta property="og:description"
+        content="Create custom QR codes with logos, colors, dot styles and adjustable white margins. Free, fast and secure QR Code Generator by imagetoolify.">
+    <meta property="og:image" content="https://imagetoolify.in/qr-generator/img/banner.png">
+    <meta property="og:image:secure_url" content="https://imagetoolify.in/qr-generator/img/banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Multi-Type QR Code Generator - imagetoolify.in">
+    <meta property="og:site_name" content="imagetoolify">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-Type QR Code Generator with Logo & Padding | imagetoolify">
+    <meta name="twitter:description"
+        content="Create custom QR codes with logos, colors, dot styles and adjustable white margins. 100% free online QR Code Generator.">
+    <meta name="twitter:image" content="https://imagetoolify.in/qr-generator/img/banner.png">
+    <meta name="twitter:image:alt" content="Multi-Type QR Code Generator - imagetoolify.in">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- QR Code Styling Library -->
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js">
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/qr-generator/css/qr.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+
+    <link rel="apple-touch-icon" href="/assets/images/ImageToolifyLogo.png">
+
+    <link rel="shortcut icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">imagetoolify</a>
+            <div class="menu-btn" id="menuBtn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/about">About</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+        <h1>Multi-Type QR Code Generator</h1>
+        <p>Create Custom QR Codes with Custom Logo & Adjustable White Margin</p>
+    </div>
+
+    <!-- ===== TOOL MAIN SECTION ===== -->
+    <div class="section">
+        <div class="cropper-card">
+
+            <!-- 11 QR Types Tabs -->
+            <div class="type-tabs-grid" id="typeTabs">
+                <button class="type-tab active" data-type="url"><i class="fas fa-link"></i> URL</button>
+                <button class="type-tab" data-type="text"><i class="fas fa-align-left"></i> Text</button>
+                <button class="type-tab" data-type="wifi"><i class="fas fa-wifi"></i> WiFi</button>
+                <button class="type-tab" data-type="phone"><i class="fas fa-phone"></i> Call</button>
+                <button class="type-tab" data-type="email"><i class="fas fa-envelope"></i> Email</button>
+                <button class="type-tab" data-type="sms"><i class="fas fa-comment-dots"></i> SMS</button>
+                <button class="type-tab" data-type="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                <button class="type-tab" data-type="vcard"><i class="fas fa-address-card"></i> vCard</button>
+                <button class="type-tab" data-type="location"><i class="fas fa-map-marker-alt"></i> Location</button>
+                <button class="type-tab" data-type="upi"><i class="fas fa-wallet"></i> UPI Pay</button>
+                <button class="type-tab" data-type="social"><i class="fas fa-share-alt"></i> Social</button>
+            </div>
+
+            <!-- Dynamic Form Area -->
+            <div class="dynamic-form" id="dynamicForm"></div>
+
+            <!-- Custom Logo Upload Section -->
+            <div class="input-group">
+                <label><i class="fas fa-image"></i> Custom Center Logo (Optional)</label>
+                <div class="logo-upload-wrapper">
+                    <input type="file" id="logoInput" class="control-input" accept="image/*">
+                    <button class="logo-remove-btn" id="removeLogoBtn">Remove</button>
+                </div>
+            </div>
+
+            <!-- Customization Controls Grid -->
+            <div class="controls-grid">
+                <div class="input-group">
+                    <label>QR Code Color</label>
+                    <input type="color" id="colorDark" class="control-input control-color" value="#000000">
+                </div>
+                <div class="input-group">
+                    <label>Background Color</label>
+                    <input type="color" id="colorLight" class="control-input control-color" value="#ffffff">
+                </div>
+                <div class="input-group">
+                    <label>Dot Style</label>
+                    <select id="dotStyle" class="control-select">
+                        <option value="square">Square</option>
+                        <option value="dots">Dots</option>
+                        <option value="rounded" selected>Rounded</option>
+                        <option value="classy">Classy</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>White Border / Margin (<span id="marginVal">20</span>px)</label>
+                    <input type="range" id="marginInput" class="control-input" min="0" max="50" value="20">
+                </div>
+            </div>
+
+            <!-- Preview Display Box -->
+            <div class="qr-preview-box">
+                <div id="qrcode"></div>
+            </div>
+
+            <!-- Actions -->
+            <div class="action-group">
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-rotate-left"></i> Reset</button>
+                <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download PNG</button>
+            </div>
+
+        </div>
+
+        <!-- ===== HOW TO USE & FAQ SECTION ===== -->
+        <div class="content-card">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> How to Use the Multi-Type QR Code Generator</h2>
+            <p style="font-size:14px; margin-bottom:12px;">Generating custom, professional, and high-resolution QR codes
+                for personal, professional, or commercial needs is completely free, instant, and secure. Follow this
+                step-by-step master guide to build, customize, and deploy your custom QR codes effectively:</p>
+
+            <ol class="steps-list">
+                <li><strong>Select Your Preferred QR Code Type:</strong> Begin by selecting the appropriate category
+                    from the 11 supported options at the top of the interface:
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px;">
+                        <li><strong>URL:</strong> Perfect for landing pages, blogs, e-commerce stores, portfolio
+                            websites, or digital menus.</li>
+                        <li><strong>Text:</strong> Encode plain unformatted text, instructions, serial numbers,
+                            cryptographic keys, or notes.</li>
+                        <li><strong>WiFi:</strong> Share wireless network credentials (SSID, Password, and Encryption
+                            standard) safely without manual typing.</li>
+                        <li><strong>Call (Phone):</strong> Allow customers to tap-to-call your customer support or sales
+                            line instantly.</li>
+                        <li><strong>Email:</strong> Create automated email triggers pre-filled with recipient address,
+                            subject line, and body text.</li>
+                        <li><strong>SMS:</strong> Trigger pre-composed text messages directed to specific telephone
+                            numbers.</li>
+                        <li><strong>WhatsApp:</strong> Generate direct click-to-chat WhatsApp links pre-loaded with
+                            custom initial greeting messages.</li>
+                        <li><strong>vCard:</strong> Share complete digital business cards containing contact name,
+                            phone, email, company, and job title.</li>
+                        <li><strong>Location:</strong> Embed precise geographic coordinates (Latitude and Longitude) to
+                            pinpoint locations on Google Maps.</li>
+                        <li><strong>UPI Payment:</strong> Create universal Indian UPI payment links with custom VPA ID,
+                            payee name, and payment amount.</li>
+                        <li><strong>Social Media:</strong> Direct users straight to your Instagram, YouTube, LinkedIn,
+                            Facebook, or Twitter profile links.</li>
+                    </ul>
+                </li>
+                <li><strong>Enter & Format Your Data Accurate Details:</strong> Fill in the generated form fields
+                    tailored to your selected type. When entering phone numbers for WhatsApp, Calls, or SMS, use the
+                    integrated country code dropdown (e.g., +91 for India, +1 for US/Canada) to automatically prepend
+                    the required international prefix. Double-check all URL strings to ensure they begin with valid
+                    protocols (such as <code>https://</code>) to prevent broken destination links.</li>
+                <li><strong>Upload a Custom Branding Logo (Optional):</strong> Personalize your QR code by adding your
+                    brand mark, company logo, or icon in the center overlay. Click on the <i>Custom Center Logo</i> file
+                    input and upload any square PNG or JPG file. Our engine automatically centers the graphic, clears
+                    conflicting background dots, and maintains visual balance without breaking code scannability.</li>
+                <li><strong>Style Colors & Dot Patterns:</strong> Personalize the appearance of your QR code to align
+                    with your personal brand or corporate identity. Select high-contrast foreground dark colors and
+                    light background shades. Choose from four distinct dot matrix styles:
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px;">
+                        <li><strong>Square:</strong> Traditional, sharp industrial standard look for formal business
+                            applications.</li>
+                        <li><strong>Rounded:</strong> Modern, friendly appearance with smoothly curved pixel edges.</li>
+                        <li><strong>Dots:</strong> Circular dot matrix aesthetic popular in contemporary graphic design.
+                        </li>
+                        <li><strong>Classy:</strong> Elegant diamond-hybrid pattern designed for premium marketing
+                            materials.</li>
+                    </ul>
+                </li>
+                <li><strong>Adjust Quiet Zone Padding (White Margin):</strong> Use the interactive <i>White Border /
+                        Margin Slider</i> (ranging from 0px to 50px) to set an adequate Quiet Zone around your matrix.
+                    QR scanners rely on this blank outer boundary to distinguish code patterns from surrounding
+                    background graphics, poster artwork, or dark textures. Setting a margin between 15px and 25px is
+                    strongly recommended for printed media.</li>
+                <li><strong>Live Preview Verification:</strong> Inspect the real-time generated output in the live
+                    display canvas box. Test the generated matrix using a mobile device scanner or camera app prior to
+                    exporting to confirm that all encoded URL parameters, contact details, or payment strings render
+                    correctly.</li>
+                <li><strong>Download High-Resolution PNG:</strong> Click the primary <strong>Download PNG</strong>
+                    button to save your final artwork locally. The generated raster file is rendered with crisp pixel
+                    density, making it immediately ready for digital distribution, social media posts, email signatures,
+                    print media, flyers, menus, product packaging, and business cards.</li>
+            </ol>
+
+            <h2 class="section-title" style="margin-top: 40px;"><i class="fas fa-question-circle"></i> Frequently Asked
+                Questions (FAQ)</h2>
+            <div class="faq-container">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 1. Is this QR Code Generator
+                        completely free for commercial and personal use?</div>
+                    <div class="faq-answer">Yes, our QR Code Generator on imagetoolify.in is 100% free with no hidden
+                        subscription costs, tiered pricing, trial periods, or account creation requirements. You are
+                        free to generate an unlimited volume of QR codes for personal projects, commercial brand
+                        campaigns, retail packaging, print ads, and digital media.</div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 2. Do the generated QR codes ever
+                        expire or have scan limits?</div>
+                    <div class="faq-answer">No, all QR codes generated through this tool are completely static. Static
+                        QR codes encode the target data (such as web links, plain text, UPI strings, or contact cards)
+                        directly into the geometric matrix itself. Because there is no intermediary redirection server
+                        hosting your data, the codes will never expire, run out of scans, or stop functioning.</div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 3. What is the difference between
+                        static and dynamic QR codes?</div>
+                    <div class="faq-answer">Static QR codes store destination data permanently inside the code matrix
+                        pattern. Once generated, the encoded content cannot be edited, but the code remains active
+                        forever without server dependencies. Dynamic QR codes store a short redirect link that points to
+                        a server where the destination URL can be modified later and scan metrics tracked. Our generator
+                        creates privacy-friendly, zero-cost static QR codes.</div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 4. Why is adding a white border or
+                        margin slider crucial for printing?</div>
+                    <div class="faq-answer">Every standard QR reader requires a clear perimeter known as a "Quiet Zone"
+                        to isolate the code pattern from surrounding visuals, text, or dark backgrounds. Without an
+                        adequate white margin, camera sensors struggle to detect code boundaries, resulting in failed
+                        scans. Adding a margin of 15px–25px ensures seamless readability across printed flyers,
+                        packaging, and digital screens.</div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 5. How does selecting a country code
+                        work for WhatsApp, Call, and SMS types?</div>
+                    <div class="faq-answer">International telecommunication standards require full country prefixes to
+                        route calls and messaging protocols correctly across borders. By selecting your country code
+                        (e.g., +91 for India, +1 for USA, +44 for UK) from our dropdown, our script formats the
+                        telephone string into global uniform URI protocols like <code>tel:+919876543210</code> or
+                        <code>https://wa.me/919876543210</code>, preventing local dialing format errors globally.
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 6. Will uploading a center logo
+                        reduce the scanning reliability of my QR code?</div>
+                    <div class="faq-answer">No, QR codes utilize Reed-Solomon Error Correction algorithms designed to
+                        withstand partial surface damage or overlay obstruction up to 30%. Our rendering engine
+                        automatically applies high error correction levels (Level H) when a custom logo is uploaded,
+                        allowing smartphones to read the surrounding matrix modules effortlessly without data
+                        corruption.</div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 7. What image file formats are
+                        supported for custom logo uploads?</div>
+                    <div class="faq-answer">Our custom logo engine accepts standard web raster image formats including
+                        PNG, JPG, JPEG, WEBP, and SVG. For best visual results, we recommend uploading a high-resolution
+                        square logo image (e.g., 500x500 pixels) with a transparent PNG background so it renders cleanly
+                        in the central canvas box without harsh background edges.</div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 8. Is my personal input data or
+                        uploaded logo saved on your servers?</div>
+                    <div class="faq-answer">No. We prioritize absolute user privacy. All QR code matrix calculations,
+                        dynamic form rendering, canvas graphics drawing, and logo processing occur 100% client-side
+                        inside your local web browser session via JavaScript. No contact numbers, text entries, location
+                        coordinates, UPI keys, or uploaded graphic files are ever uploaded, recorded, or saved to our
+                        servers.</div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 9. How do I generate a WiFi QR code
+                        so guests can connect automatically?</div>
+                    <div class="faq-answer">Select the 'WiFi' tab in the top selection grid, enter your exact Network
+                        Name (SSID), type in the network Wi-Fi password, and select your security encryption type
+                        (WPA/WPA2 is standard for most routers). When guests scan the generated QR code with their
+                        mobile camera, iOS and Android devices will prompt them to join the network automatically
+                        without typing the password.</div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 10. How does the UPI Payment QR code
+                        generator work for Indian users?</div>
+                    <div class="faq-answer">Select the 'UPI Pay' tab, type in your valid Virtual Payment Address or UPI
+                        ID (e.g., <code>username@upi</code>, <code>mobile@paytm</code>, or <code>name@okicici</code>),
+                        enter the Payee/Merchant name, and optionally specify a fixed transfer amount. When scanned by
+                        payment apps like Google Pay, PhonePe, Paytm, or BHIM, it opens the payment screen with your
+                        pre-filled details for instant settlements.</div>
+                </div>
+
+                <!-- FAQ 11 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 11. What is a vCard QR code and how
+                        is it used on business cards?</div>
+                    <div class="faq-answer">A vCard QR code encodes digital contact card information following the
+                        standard electronic business card protocol. When scanned by a mobile phone camera, it allows the
+                        user to save your full contact details—including full name, phone number, work email address,
+                        and company organization name—directly into their smartphone address book with a single tap.
+                    </div>
+                </div>
+
+                <!-- FAQ 12 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 12. How do color choices affect QR
+                        code scannability?</div>
+                    <div class="faq-answer">QR code optical sensors rely on high light contrast to distinguish
+                        foreground dark data blocks from background light spaces. Always choose a dark color (e.g.,
+                        black, deep blue, dark grey, navy) for the foreground QR pattern and a light color (e.g., white,
+                        off-white, light yellow) for the background. Never invert colors (e.g., white dots on a black
+                        background), as many legacy camera readers cannot parse inverted matrices.</div>
+                </div>
+
+                <!-- FAQ 13 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 13. What dot pattern options are
+                        available and do they affect performance?</div>
+                    <div class="faq-answer">We offer four dot matrix aesthetics: Square, Rounded, Dots, and Classy. All
+                        four dot styles are fully compliant with standard QR ISO reading specs. While aesthetic shapes
+                        change the visual design of the matrix modules, they do not impact scanner compatibility across
+                        modern iOS, Android, or hardware barcode scanners.</div>
+                </div>
+
+                <!-- FAQ 14 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 14. What size should a printed QR
+                        code be for reliable scanning?</div>
+                    <div class="faq-answer">For small items like business cards, product tags, or table stands, the
+                        printed QR code size should be at least 2 cm x 2 cm (0.8 in x 0.8 in). For larger items like
+                        posters, billboards, or wall banners, follow the standard 10:1 scanning ratio rule: the distance
+                        between the scanner and the code divided by 10 gives the minimum physical width of the printed
+                        QR code (e.g., a scan distance of 10 feet requires a 1-foot wide QR code).</div>
+                </div>
+
+                <!-- FAQ 15 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 15. What format is the downloaded QR
+                        code image and is it print-ready?</div>
+                    <div class="faq-answer">Our generator exports high-definition PNG (Portable Network Graphics)
+                        images. PNG is a lossless raster format that preserves crisp vector-like dot edges without pixel
+                        blur or compression artifacts, making it ideal for both online digital graphics and
+                        high-resolution physical print media.</div>
+                </div>
+
+                <!-- FAQ 16 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 16. Can I generate a Location QR code
+                        for physical events or store directions?</div>
+                    <div class="faq-answer">Yes! Select the 'Location' tab and enter the exact geographic coordinates
+                        (Latitude and Longitude) of your physical storefront, event hall, or venue. When users scan the
+                        code, their device opens Google Maps or Apple Maps directly pinpointing the navigation path to
+                        your specified location.</div>
+                </div>
+
+                <!-- FAQ 17 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 17. How can I create a WhatsApp QR
+                        code with a pre-written message?</div>
+                    <div class="faq-answer">Click on the 'WhatsApp' tab, select your destination country code, type in
+                        your target mobile number, and enter a default custom message in the 'Pre-filled Message' field
+                        (e.g., "Hello, I want to inquire about your services"). When a user scans the code, WhatsApp
+                        opens a direct chat window addressed to your number with the text ready to send.</div>
+                </div>
+
+                <!-- FAQ 18 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 18. Why is my generated QR code not
+                        scanning properly?</div>
+                    <div class="faq-answer">If your QR code fails to scan, check these common causes: (1) Low color
+                        contrast between foreground dots and background color; (2) The white margin border slider is set
+                        to 0px; (3) The center logo image uploaded is too large and covering corner anchor squares; (4)
+                        The encoded target URL contains typos or missing protocols; or (5) Excessive data density packed
+                        into a small physical print size.</div>
+                </div>
+
+                <!-- FAQ 19 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 19. Can I edit the content of a QR
+                        code after printing it?</div>
+                    <div class="faq-answer">Since this tool generates static QR codes, the destination data is encoded
+                        directly into the physical matrix layout. Once printed, the encoded content inside that specific
+                        static code graphic cannot be changed. If you need to update information, simply generate a new
+                        QR code or use a short link domain that you control as your destination URL.</div>
+                </div>
+
+                <!-- FAQ 20 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 20. Do users need to install a
+                        third-party app to scan these QR codes?</div>
+                    <div class="faq-answer">No. Virtually all modern Android smartphones running Android 8+ and iPhones
+                        running iOS 11+ have built-in QR code detection integrated directly into their default system
+                        Camera apps. Users simply point their phone camera at the code to view pop-up notification links
+                        instantly.</div>
+                </div>
+
+                <!-- FAQ 21 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 21. How do I create a pre-filled
+                        Email QR code?</div>
+                    <div class="faq-answer">Select the 'Email' tab, enter the target recipient email address, provide a
+                        subject header, and draft a default message body. When scanned, it launches the user's default
+                        email client (e.g., Gmail, Outlook, Apple Mail) with all message fields pre-populated, leaving
+                        only the 'Send' button for the user to tap.</div>
+                </div>
+
+                <!-- FAQ 22 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 22. Can I link social media profiles
+                        using this tool?</div>
+                    <div class="faq-answer">Yes, select the 'Social' or 'URL' tab and paste your full platform profile
+                        URL (e.g., Instagram, YouTube Channel, LinkedIn, Facebook page, or X profile link). Scanning the
+                        QR code takes users straight to your social channel inside their installed app or web browser.
+                    </div>
+                </div>
+
+                <!-- FAQ 23 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 23. What are the three large square
+                        markers in the corners of the QR code?</div>
+                    <div class="faq-answer">The three distinct square patterns situated in the top-left, top-right, and
+                        bottom-left corners are called Position Detection Patterns or Finder Patterns. Optical camera
+                        sensors use these landmarks to recognize the orientation, scale, angle, and tilt of the QR code
+                        matrix relative to the lens before reading the interior data dots.</div>
+                </div>
+
+                <!-- FAQ 24 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 24. What is the maximum character
+                        capacity of a static QR code?</div>
+                    <div class="faq-answer">Static QR codes can theoretically store up to 7,089 numeric characters,
+                        4,296 alphanumeric characters, or 2,953 binary bytes. However, encoding extremely long URLs or
+                        paragraphs creates an extremely dense visual matrix with tiny modules that are harder for phone
+                        cameras to scan. Keeping target text concise ensures higher scannability.</div>
+                </div>
+
+                <!-- FAQ 25 -->
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 25. Is there any limit on how many QR
+                        codes I can download per day?</div>
+                    <div class="faq-answer">There are absolutely zero daily generation caps, download limits, bandwidth
+                        restrictions, or paywalls on imagetoolify.in. You are free to create, customize, test, and
+                        export as many high-resolution QR codes as your personal projects or business workflows require.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="/blog">Blog</a> |
+            <a href="/about">About Us</a> |
+            <a href="/faq">FAQ</a> |
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms">Terms</a> |
+            <a href="/contact">Contact</a> |
+            <a href="/imagetoolify-sitemap">Sitemap</a>
+        </div>
+        <div class="footer-text">
+            © 2026 imagetoolify.in — All Rights Reserved.
+        </div>
+    </footer>
+
+
+    <script src="/qr-generator/js/qr.js"></script>
+</body>
+
+</html>
