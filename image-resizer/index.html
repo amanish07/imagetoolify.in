@@ -2,215 +2,515 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Image Resizer For Pan Card, Voter Card & Other Documents – Imagetoolify</title>
+    <!-- Basic -->
+    <meta charset="UTF-8">
 
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/images/ImageToolifyLogo.png">
-  <link rel="shortcut icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <!-- BASIC SEO -->
-  <meta name="description"
-    content="Free online image resizer to resize and compress images for PAN Card, Voter ID and other documents. Resize images by KB or pixels instantly.">
-  <meta name="keywords"
-    content="image resizer, pan card image resizer, voter id image resizer, resize image kb, image tools online">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Title -->
+    <title>Image Resizer for PAN Card, Voter ID, Passport, Signature & Government Documents | ImageToolify</title>
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Image Resizer – imagetoolify">
-  <meta property="og:description"
-    content="Resize and compress images online for PAN Card, Voter ID and other documents.">
-  <meta property="og:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://imagetoolify.in/image-resizer/">
+    <!-- SEO Meta Description -->
+    <meta name="description"
+        content="Resize, crop and compress images for PAN Card, Voter ID, Passport, Aadhaar, Signature and other government documents to exact KB size and dimensions online. Perfect for government forms and online applications.">
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Image Resizer – imagetoolify">
-  <meta name="twitter:description" content="Resize images online for PAN Card and Voter ID forms.">
-  <meta name="twitter:image" content="https://imagetoolify.in/assets/images/ImageToolifyBanner.png">
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/styles/image-resizer.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.imagetoolify.in/image-resizer/">
 
-  <!-- jsPDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
 
+    <meta property="og:site_name" content="ImageToolify">
 
-  <link rel="canonical" href="https://imagetoolify.in/image-resizer/">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4972282828170446"
-    crossorigin="anonymous"></script>
+    <meta property="og:title"
+        content="Image Resizer for PAN Card, Voter ID, Passport, Signature & Government Documents | ImageToolify">
 
+    <meta property="og:description"
+        content="Resize, crop and compress images for PAN Card, Voter ID, Passport, Aadhaar, Signature and other government documents to exact KB size and dimensions online.">
 
+    <meta property="og:url" content="https://www.imagetoolify.in/image-resizer/">
 
-  <link href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+    <!-- Open Graph Image -->
+    <meta property="og:image" content="https://www.imagetoolify.in/image-resizer/img/banner.png">
+
+    <meta property="og:image:secure_url" content="https://www.imagetoolify.in/image-resizer/img/banner.png">
+
+    <meta property="og:image:type" content="image/png">
+
+    <meta property="og:image:alt"
+        content="Image Resizer for PAN Card, Voter ID, Passport, Signature and Government Documents">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="Image Resizer for PAN Card, Voter ID, Passport, Signature & Government Documents | ImageToolify">
+
+    <meta name="twitter:description"
+        content="Resize, crop and compress images for PAN Card, Voter ID, Passport, Aadhaar, Signature and other government documents to exact KB size and dimensions online.">
+
+    <meta name="twitter:image" content="https://www.imagetoolify.in/image-resizer/img/banner.png">
+
+    <meta name="twitter:image:alt"
+        content="Image Resizer for PAN Card, Voter ID, Passport, Signature and Government Documents">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/ImageToolifyLogo.png">
+    <link rel="shortcut icon" href="/assets/images/ImageToolifyLogo.png" type="image/png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+
+    <!-- Your External CSS -->
+    <link rel="stylesheet" href="/css/resizer.css">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer>
+    </script>
+
+    <!-- Cropper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" defer>
+    </script>
+
+    <!-- Your External JavaScript -->
+    <script src="/js/resizer.js" defer></script>
 
 </head>
 
+
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="/" class="logo">imagetoolify</a>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">imagetoolify</a>
+            <div class="menu-btn" id="menuBtn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/about">About</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
 
-      <div class="menu-btn" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+        <h1>Photo, Signature & Document Resizer</h1>
+        <p>Crop, resize, and compress images & documents for PAN Card, Voter Card, Passport, and Govt forms</p>
     </div>
 
-    <nav class="nav-menu" id="navMenu">
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
-      <a href="/faq">FAQ</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
+    <!-- ===== MAIN TOOL SECTION ===== -->
+    <div class="section">
+        <div class="tool-card">
 
-  <div class="container">
-    <h1>Image Resizer</h1>
-    <p class="sub">
-      Crop, resize and compress images to exact KB for PAN Card, Passport and Signature.
-    </p>
+            <!-- Drag & Drop Zone -->
+            <div class="drop-zone" id="dropZone">
+                <i class="fas fa-id-card"></i>
+                <p>Click or Drag & Drop Photo/Signature/Document Image Here</p>
+                <span>Supports JPG, JPEG, PNG, WEBP, BMP (Interactive Cropping Enabled)</span>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
 
-    <div class="upload-box">
-      <label class="btn">
-        Upload Image
-        <input type="file" id="upload" accept="image/*">
-      </label>
-      <p id="fileInfo"></p>
+            <!-- Uploaded Image & Cropper Workspace -->
+            <div class="preview-box" id="previewBox">
+                <div class="cropper-container-wrapper">
+                    <img id="imagePreview" src="" alt="Original Image for Cropping">
+                </div>
+
+                <!-- Crop Control Buttons -->
+                <div class="crop-toolbar">
+                    <button class="crop-btn-sm" id="btnRotateLeft" title="Rotate Left"><i
+                            class="fas fa-rotate-left"></i> Rotate Left</button>
+                    <button class="crop-btn-sm" id="btnRotateRight" title="Rotate Right"><i
+                            class="fas fa-rotate-right"></i> Rotate Right</button>
+                    <button class="crop-btn-sm" id="btnZoomIn" title="Zoom In"><i
+                            class="fas fa-magnifying-glass-plus"></i> Zoom In</button>
+                    <button class="crop-btn-sm" id="btnZoomOut" title="Zoom Out"><i
+                            class="fas fa-magnifying-glass-minus"></i> Zoom Out</button>
+                    <button class="crop-btn-sm" id="btnFreeCrop" title="Free Crop Ratio"><i
+                            class="fas fa-crop-simple"></i> Free Ratio</button>
+                </div>
+
+                <div class="file-info" id="fileInfo"></div>
+            </div>
+
+            <!-- Resizer Controls -->
+            <div class="controls-grid">
+                <!-- Preset Selector -->
+                <div class="input-group full-width">
+                    <label><i class="fas fa-sliders"></i> Select Resizing Preset</label>
+                    <select id="presetSelect" class="control-select">
+                        <option value="custom" selected>Custom Dimensions & Custom KB</option>
+
+                        <!-- PAN CARD PRESETS -->
+                        <option value="pan_photo">PAN Card Photo - 295 x 413 px, Max 30 KB</option>
+                        <option value="pan_sig">PAN Card Signature - 300 x 150 px, Max 10 KB</option>
+                        <option value="pan_doc">PAN Card Document - Max 300 KB</option>
+
+                        <!-- VOTER CARD PRESETS -->
+                        <option value="voter_photo">Voter Card Photo - 350 x 450 px (3.5x4.5 cm), Max 50 KB</option>
+                        <option value="voter_sig">Voter Card Signature / Thumb - 300 x 120 px, Max 20 KB</option>
+                        <option value="voter_doc">Voter Card Document - Max 200 KB</option>
+
+                        <!-- PASSPORT & STANDARD PRESETS -->
+                        <option value="passport_india">Indian Passport Photo - 413 x 531 px (3.5x4.5cm @300DPI), Max 200
+                            KB</option>
+                        <option value="govt_signature_std">Standard Portal Signature - 300 x 120 px, Max 20 KB</option>
+                    </select>
+                </div>
+
+                <!-- Target Width -->
+                <div class="input-group">
+                    <label><i class="fas fa-arrows-left-right"></i> Width in px (Optional)</label>
+                    <input type="number" id="targetWidth" class="control-input" placeholder="e.g. 800" min="10">
+                </div>
+
+                <!-- Target Height -->
+                <div class="input-group">
+                    <label><i class="fas fa-arrows-up-down"></i> Height in px (Optional)</label>
+                    <input type="number" id="targetHeight" class="control-input" placeholder="e.g. 600" min="10">
+                </div>
+
+                <!-- Max File Size in KB -->
+                <div class="input-group">
+                    <label><i class="fas fa-weight-hanging"></i> Max Size (KB)</label>
+                    <input type="number" id="targetKB" class="control-input" placeholder="e.g. 30" min="1" max="10000">
+                </div>
+
+                <!-- Output File Format Selection -->
+                <div class="input-group">
+                    <label><i class="fas fa-file-export"></i>Format (Image/PDF)</label>
+                    <select id="outputFormat" class="control-select">
+                        <option value="jpg" selected>JPG (.jpg)</option>
+                        <option value="jpeg">JPEG (.jpeg)</option>
+                        <option value="pdf">PDF (.pdf)</option>
+                    </select>
+                </div>
+
+                <!-- Output File Name -->
+                <div class="input-group full-width">
+                    <label><i class="fas fa-pen"></i> Output File Name</label>
+                    <input type="text" id="customFileName" class="control-input" placeholder="e.g. resized_photo">
+                </div>
+            </div>
+
+            <!-- Resized Output Preview Box -->
+            <div class="output-preview-box" id="outputPreviewBox">
+                <h3><i class="fas fa-check-circle"></i> Compressed Output Preview</h3>
+                <div class="output-preview-container">
+                    <img id="outputImagePreview" src="" alt="Resized Preview">
+                </div>
+                <div class="output-info" id="outputInfo"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-group">
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-rotate-left"></i> Reset</button>
+                <button class="btn btn-primary" id="previewBtn" disabled><i class="fas fa-eye"></i> Crop &
+                    Preview</button>
+                <button class="btn btn-success" id="downloadBtn" disabled><i class="fas fa-download"></i> Save
+                    File</button>
+            </div>
+
+        </div>
+
+        <!-- ===== CONTENT & FAQ ===== -->
+        <div class="content-card">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> How to Crop & Resize Photos for Govt Portals</h2>
+            <p style="font-size:14px; margin-bottom:12px;">Crop, resize, and compress your passport photos, PAN card
+                pictures, Voter ID documents, signatures, and PDF documents to exact specifications in your browser:</p>
+
+            <ol class="steps-list">
+                <li><strong>Upload Image:</strong> Select or drag and drop your photo, signature, or document scan.</li>
+                <li><strong>Adjust Crop Area:</strong> Drag the crop handles to frame your image. Use rotate/zoom tools
+                    if required.</li>
+                <li><strong>Select Portal Preset:</strong> Choose a preset for PAN Card, Voter ID, or Indian Passport.
+                </li>
+                <li><strong>Choose Format & Preview:</strong> Select JPG, JPEG, or PDF format and click <strong>Crop &
+                        Preview</strong>.</li>
+                <li><strong>Save File:</strong> Click <strong>Save File</strong> to download your formatted image or
+                    PDF.</li>
+            </ol>
+
+            <!-- ===== CODE SECTION: WHERE & HOW TO USE ===== -->
+            <div
+                style="margin: 30px 0; padding-top: 20px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <h2 class="section-title"><i class="fas fa-tools"></i> Where and How to Use This Tool for Govt Documents
+                </h2>
+                <p style="font-size:14px; margin-bottom:15px;">This utility is designed for instant browser-based
+                    processing, enabling you to format your scanned files specifically for the following requirements
+                    and portals:</p>
+
+                <!-- Voter ID Photo & Signature Resizing -->
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 15px; margin-bottom: 6px; color: #2c3e50;"><i class="fas fa-id-card"></i> For
+                        Voter ID Photo & Signature Resizing</h3>
+                    <p style="font-size: 13px; line-height: 1.5; margin-bottom: 5px;">
+                        <strong>Where to use:</strong> National Voters' Service Portal (NVSP) and the official ECI Voter
+                        Service Portal during Form 6, Form 6B, or Form 8 submissions.
+                    </p>
+                    <p style="font-size: 13px; line-height: 1.5;">
+                        <strong>How to use:</strong> Upload your passport photograph and set dimensions to 350 x 450
+                        pixels (under 50 KB). For signatures or thumb impressions, crop tightly and set dimensions to
+                        300 x 120 pixels (under 20 KB) in JPEG format to prevent portal validation errors.
+                    </p>
+                </div>
+
+                <!-- PAN Card Photo & Signature Resizing -->
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 15px; margin-bottom: 6px; color: #2c3e50;"><i class="fas fa-file-invoice"></i>
+                        For PAN Card Photo & Signature Resizing</h3>
+                    <p style="font-size: 13px; line-height: 1.5; margin-bottom: 5px;">
+                        <strong>Where to use:</strong> NSDL (Protean) and UTIITSL portals for new PAN card applications
+                        or demographic changes.
+                    </p>
+                    <p style="font-size: 13px; line-height: 1.5;">
+                        <strong>How to use:</strong> Format your photograph to exactly 295 x 413 pixels with a maximum
+                        size of 30 KB. Crop signatures into a 2:1 aspect ratio at 300 x 150 pixels keeping the file
+                        weight under 10 KB in strict JPEG format.
+                    </p>
+                </div>
+
+                <!-- Universal Government Document & PDF Resizer -->
+                <div>
+                    <h3 style="font-size: 15px; margin-bottom: 6px; color: #2c3e50;"><i class="fas fa-file-alt"></i> For
+                        All Government Websites, Photo & Document Resizing</h3>
+                    <p style="font-size: 13px; line-height: 1.5; margin-bottom: 5px;">
+                        <strong>Where to use:</strong> State gateways like RTPS Bihar (for income, caste, and
+                        residential certificates), employment boards (UPSC, SSC, banking exams), and scholarship
+                        portals.
+                    </p>
+                    <p style="font-size: 13px; line-height: 1.5;">
+                        <strong>How to use:</strong> Upload bulky PDF document scans (up to several megabytes) and
+                        compress or convert them into single-page optimized files under 200 KB to 300 KB. This ensures
+                        instant upload success without triggering server-side script failures or dimension mismatches.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 30px;"><i class="fas fa-question-circle"></i> Frequently Asked
+                Questions (FAQ)</h2>
+            <div class="faq-container">
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 1. What are the exact PAN Card photo,
+                        signature, and document specifications?</div>
+                    <div class="faq-answer">PAN Card photos must be 295 x 413 px (Max 30 KB), signatures 300 x 150 px
+                        (Max 10 KB) in JPEG format, and support documents (Identity, Address, DOB proof) must be under
+                        300 KB.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 2. What are the official Voter ID
+                        Card (NVSP Portal) requirements?</div>
+                    <div class="faq-answer">Voter ID photos must be 350 x 450 px (Max 50 KB), signatures / thumb
+                        impressions 300 x 120 px (Max 20 KB), and age/address proof documents should be under 200 KB.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 3. How does cropping help before
+                        resizing?</div>
+                    <div class="faq-answer">Cropping removes unnecessary borders and margins, ensuring your photo or
+                        document scan fits clearly within official portal upload specifications.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 4. Are my uploaded files stored on
+                        your server?</div>
+                    <div class="faq-answer">100% private and safe. All cropping, resizing, and compression happen
+                        entirely within your browser memory. No file is ever stored on external servers.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 5. Why do government portals reject
+                        photos even when they are in JPG format?</div>
+                    <div class="faq-answer">Portals often reject images due to incorrect pixel dimensions, color profile
+                        mismatches (such as CMYK instead of RGB), or exceeding the strict byte size limit despite
+                        acceptable dimensions.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 6. How can I reduce a PDF document
+                        size from 2 MB to under 300 KB for RTPS uploads?</div>
+                    <div class="faq-answer">You can use a browser-based PDF compressor or convert the PDF pages into
+                        optimized grayscale images and recompile them into a compressed single-page PDF document.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 7. Is it acceptable to wear
+                        spectacles in a PAN card or Voter ID photo?</div>
+                    <div class="faq-answer">Clear prescription glasses without heavy frames or reflective glare are
+                        generally accepted, but sunglasses, tinted lenses, or glasses causing flash reflection will lead
+                        to application rejection.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 8. What is the difference between
+                        image dimensions (pixels) and file size (KB)?</div>
+                    <div class="faq-answer">Dimensions refer to the width and height in pixels, while file size refers
+                        to the digital storage weight determined by image compression quality and color depth.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 9. Can I upload a signature
+                        photographed with a smartphone camera?</div>
+                    <div class="faq-answer">Yes, provided the photo is taken under bright natural light on plain white
+                        paper, cropped tightly to remove shadows, and converted to high-contrast JPEG within the allowed
+                        byte limit.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 10. What should I do if the NSDL
+                        portal shows an "Invalid Image Format" error?</div>
+                    <div class="faq-answer">Ensure the file extension is strictly .jpg or .jpeg (avoiding .png, .webp,
+                        or uppercase extensions like .JPG) and that the file is saved in standard RGB color space.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 11. Are thumb impressions legally
+                        valid substitutes for signatures on government forms?</div>
+                    <div class="faq-answer">Yes, illiterate applicants or individuals unable to sign can upload a
+                        scanned thumb impression within the designated signature dimension box per specific form
+                        guidelines.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 12. How do I handle multi-page
+                        documents when the portal allows only a single file upload?</div>
+                    <div class="faq-answer">Merge multiple pages into a single compressed PDF file or combine the pages
+                        into a vertical image collage before uploading.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 13. Why does my resized image look
+                        blurry after compression?</div>
+                    <div class="faq-answer">Over-compressing an image to meet an extremely low file size limit strips
+                        away pixel data, causing blurriness. Start with a clean, high-resolution crop and lower the JPEG
+                        quality slider gradually.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 14. What background color is
+                        mandatory for Indian passport and identity photographs?</div>
+                    <div class="faq-answer">A plain white or off-white background is universally required by Indian
+                        government portals and official documentation systems.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 15. Can I use PNG format for
+                        uploading documents to government portals?</div>
+                    <div class="faq-answer">Most Indian government portals strictly mandate JPEG for photos/signatures
+                        and PDF for documents; PNG files are frequently blocked or cause upload script failures.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 16. How do I check the exact pixel
+                        dimensions of an image on Windows or Mac?</div>
+                    <div class="faq-answer">Hover your mouse over the image file icon in your file explorer, or
+                        right-click and select Properties (Windows) or Get Info (Mac) to view dimensions and file size.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 17. What is the ideal scanning
+                        resolution (DPI) for document uploads?</div>
+                    <div class="faq-answer">A setting of 150 to 200 DPI is optimal, providing crisp text readability
+                        while keeping the final PDF file size well below typical 200 KB to 300 KB ceilings.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 18. Why do some portal upload buttons
+                        remain disabled after selecting a file?</div>
+                    <div class="faq-answer">This usually occurs when the selected file exceeds the maximum permitted
+                        byte size or violates strict naming conventions by containing special characters or spaces.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 19. How can I ensure my signature
+                        background remains pure white?</div>
+                    <div class="faq-answer">Use a threshold or brightness adjustment tool to eliminate grey shadows cast
+                        by smartphone lighting before saving the signature as a JPEG.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 20. Do state portal requirements
+                        (like RTPS Bihar) differ from central portals like NSDL?</div>
+                    <div class="faq-answer">While central portals have standardized automated validators, state portals
+                        often feature legacy upload scripts that exhibit strict file size enforcement without detailed
+                        error readouts.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 21. What happens if my identity
+                        document photo is older than 6 months?</div>
+                    <div class="faq-answer">Portals do not verify the exact age of the photo automatically, but
+                        significant mismatch with your current appearance can cause verification delays during physical
+                        or biometric checks.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 22. Is client-side browser processing
+                        safe for sensitive government identity documents?</div>
+                    <div class="faq-answer">Yes, because processing occurs locally in your browser sandbox using
+                        JavaScript, your documents never transit across or get logged on remote servers.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 23. How do I fix orientation issues
+                        if my scanned document appears sideways?</div>
+                    <div class="faq-answer">Rotate the image by 90-degree increments in a local editor or browser
+                        preview tool before applying the crop and resize preset.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 24. What are the formatting rules for
+                        official stamps or seal integrations?</div>
+                    <div class="faq-answer">Stamps and seals must be scanned in color at 200 DPI and cropped tightly to
+                        ensure they fit secondary document verification boxes on application forms.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chevron-right"></i> 25. How do I clear browser cache if
+                        my image resizer tool fails to load updated scripts?</div>
+                    <div class="faq-answer">Perform a hard refresh (Ctrl + F5 on Windows or Cmd + Shift + R on Mac) to
+                        reload the web utility cleanly and resume document formatting.</div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="/blog">Blog</a> |
+            <a href="/about">About Us</a> |
+            <a href="/faq">FAQ</a> |
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms">Terms</a> |
+            <a href="/contact">Contact</a> |
+            <a href="/imagetoolify-sitemap">Sitemap</a>
+        </div>
+        <div class="footer-text">
+            © 2026 imagetoolify.in — All Rights Reserved.
+        </div>
+    </footer>
 
-    <div class="crop-wrapper" id="cropWrapper" style="display:none">
 
-      <div class="crop-toolbar">
-
-        <button class="btn" id="ratioFree">Free</button>
-        <button class="btn" id="ratio1">1:1</button>
-        <button class="btn" id="ratioPan">PAN</button>
-        <button class="btn" id="ratioPassport">Passport</button>
-        <button class="btn" id="ratioSign">Signature</button>
-
-
-
-
-      </div>
-
-      <div class="crop-container">
-        <img id="cropImage">
-      </div>
-
-    </div>
-
-    <div class="options">
-      <div class="options-row">
-        <input type="checkbox" id="pixelToggle">
-        <label>Resize by Pixels</label>
-      </div>
-      <div class="options-row">
-        <label>Width:</label>
-        <input type="number" id="pxW" disabled>
-        <label>Height:</label>
-        <input type="number" id="pxH" disabled>
-      </div>
-      <div class="options-row">
-        <label>Download as:</label>
-        <select id="format">
-          <option value="image">Image</option>
-          <option value="pdf">PDF</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="sizes">
-      <div class="size-btn" data-size="original">Original Size</div>
-      <div class="size-btn" data-size="20">20 KB</div>
-      <div class="size-btn" data-size="30">30 KB</div>
-      <div class="size-btn" data-size="50">50 KB</div>
-      <div class="size-btn" data-size="100">100 KB</div>
-      <div class="size-btn" data-size="300">300 KB</div>
-    </div>
-
-    <button class="btn" id="processBtn">Start Processing</button>
-    <div id="processing">⏳ Processing…</div>
-
-    <div class="preview" id="previewBox">
-      <p><b>Live Preview</b></p>
-      <img id="previewImg">
-      <p>Final Size: <span id="finalSize"></span> KB</p>
-      <a id="download" class="btn">Download</a>
-    </div>
-
-    <!-- SEO TEXT -->
-    <div class="seo-text" style="margin-top:30px">
-      <p>
-        <strong>imagetoolify Image Resizer & Crop Tool</strong> is a free online tool that helps you
-        crop, resize and compress images for official documents like PAN Card, Voter ID,
-        Passport, Aadhaar and other application forms. You can adjust image size in KB,
-        set custom dimensions, and download instantly without uploading files.
-      </p>
-      <ul>
-        <li>Crop images using 1:1, PAN, Passport and Signature ratios.</li>
-        <li>Resize images in KB for PAN Card, Voter ID and Passport forms.</li>
-        <li>Compress images to 20KB, 30KB, 50KB, 100KB and 300KB.</li>
-        <li>Resize images by exact width and height in pixels.</li>
-        <li>Download processed images as Image or PDF.</li>
-        <li>Works completely online with secure browser processing.</li>
-      </ul>
-    </div>
-
-    <!-- HOW TO USE -->
-    <div class="section" style="margin-top:30px">
-      <h2>How to Use Image Resizer</h2>
-
-      <p>
-        Using the Image Resizer and Crop tool on <strong>imagetoolify</strong> is simple and fast.
-        Follow the steps below to crop, resize and compress images for PAN Card, Voter ID,
-        Passport and other document uploads.
-      </p>
-
-      <ol style="padding-left:20px; line-height:1.8">
-        <li>Click on the <strong>Upload Image</strong> button and select your image.</li>
-        <li>Crop the image using <strong>Free, 1:1, PAN, Passport or Signature</strong> options.</li>
-        <li>Select the required image size such as <strong>20KB, 30KB, 50KB, 100KB or 300KB</strong>.</li>
-        <li>If needed, enable <strong>Resize by Pixels</strong> and enter width and height.</li>
-        <li>Choose the download format as <strong>Image</strong> or <strong>PDF</strong>.</li>
-        <li>Click on <strong>Start Processing</strong> to crop, resize and compress the image.</li>
-        <li>Preview the final image and click <strong>Download</strong>.</li>
-      </ol>
-
-      <p>
-        All processing happens inside your browser. Your images are never uploaded to any server,
-        ensuring complete privacy and security.
-        <a href="/blog/how-to-resize-image/" class="custom-text-link">
-          read more
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-links">
-      <a href="/blog">Blog</a> |
-      <a href="/about">About Us</a> |
-      <a href="/faq">FAQ</a> |
-      <a href="/privacy-policy">Privacy Policy</a> |
-      <a href="/terms">Terms</a> |
-      <a href="/contact">Contact</a>
-    </div>
-    <div class="footer-text">
-      © 2026 imagetoolify.in — All Rights Reserved.
-    </div>
-  </footer>
-  <script src="/assets/scripts/crop.js"></script>
-  <script src="/assets/scripts/image-resizer.js"></script>
+    <script src="/js/resizer.js"></script>
 </body>
 
 </html>
