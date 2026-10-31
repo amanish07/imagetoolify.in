@@ -56,6 +56,11 @@
     </url>
 
     <!-- Blog Posts -->
+     <url>
+        <loc>https://www.imagetoolify.in/blog/bihar-board-dummy-admit-card-2027/</loc>
+        <priority>0.8</priority>
+    </url>
+    
     <url>
         <loc>https://www.imagetoolify.in/blog/new-pan-card-online-kaise-banaye-2026/</loc>
         <priority>0.8</priority>
